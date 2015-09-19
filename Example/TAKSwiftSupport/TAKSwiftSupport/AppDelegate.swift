@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  TaktemSwiftSupport-Demo
+//  TAKSwiftSupport
 //
-//  Created by TakuNishimura on 2014/12/07.
-//  Copyright (c) 2014年 TakuNishimura. All rights reserved.
+//  Created by 西村 拓 on 2015/09/19.
+//  Copyright © 2015年 TakuNishimura. All rights reserved.
 //
 
 import UIKit
