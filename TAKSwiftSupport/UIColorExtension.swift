@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     // 16進数カラーコードからUIColorを生成する
-    class func colorWithHexString(#string: String!, alpha:CGFloat) -> UIColor? {
+    class func colorWithHexString(string string: String!, alpha:CGFloat) -> UIColor? {
         
         var cString:String = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
         
