@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -17,9 +17,4 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'TAKSwiftSupport/Common/**/*.swift'
-
-  s.subspec 'GoogleMap' do |ss|
-    ss.public_header_files = 'TAKAlertUtil/GoogleMap/**/*.swift'
-    ss.dependency 'GoogleMaps', '~> 1.10.2'
-  end
 end

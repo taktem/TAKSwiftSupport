@@ -13,8 +13,6 @@
 		F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C21BCC97470055FD94 /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C31BCC97470055FD94 /* UIViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		F459F5CC1BCC97470055FD94 /* BaseMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C81BCC97470055FD94 /* BaseMapView.swift */; settings = {ASSET_TAGS = (); }; };
-		F459F5CE1BCCB2CA0055FD94 /* GMSMarkerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5CD1BCCB2CA0055FD94 /* GMSMarkerEntity.swift */; settings = {ASSET_TAGS = (); }; };
 		F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */; };
 		F4F960A31BAD90EC00D48AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A21BAD90EC00D48AF1 /* ViewController.swift */; };
 		F4F960A61BAD90EC00D48AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F960A41BAD90EC00D48AF1 /* Main.storyboard */; };
@@ -31,8 +29,6 @@
 		F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = TableView/BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F459F5C21BCC97470055FD94 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F459F5C31BCC97470055FD94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		F459F5C81BCC97470055FD94 /* BaseMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMapView.swift; sourceTree = "<group>"; };
-		F459F5CD1BCCB2CA0055FD94 /* GMSMarkerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMSMarkerEntity.swift; sourceTree = "<group>"; };
 		F4F9609D1BAD90EC00D48AF1 /* TAKSwiftSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAKSwiftSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F960A21BAD90EC00D48AF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,21 +113,10 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		F459F5C71BCC97470055FD94 /* GoogleMap */ = {
-			isa = PBXGroup;
-			children = (
-				F459F5C81BCC97470055FD94 /* BaseMapView.swift */,
-				F459F5CD1BCCB2CA0055FD94 /* GMSMarkerEntity.swift */,
-			);
-			name = GoogleMap;
-			path = TAKSwiftSupport/GoogleMap;
-			sourceTree = "<group>";
-		};
 		F4AF70321BB2B3780019AB17 /* TAKSwiftSupport */ = {
 			isa = PBXGroup;
 			children = (
 				F459F5C01BCC97470055FD94 /* Common */,
-				F459F5C71BCC97470055FD94 /* GoogleMap */,
 			);
 			name = TAKSwiftSupport;
 			path = ../../../TAKSwiftSupport;
@@ -290,13 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F459F5CC1BCC97470055FD94 /* BaseMapView.swift in Sources */,
 				F4F960A31BAD90EC00D48AF1 /* ViewController.swift in Sources */,
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
 				F42E81E41BE9C5F0003BC43C /* BaseTableView.swift in Sources */,
 				F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */,
 				F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */,
-				F459F5CE1BCCB2CA0055FD94 /* GMSMarkerEntity.swift in Sources */,
 				F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */,
 				F42E81E61BE9C607003BC43C /* BaseView.swift in Sources */,
 			);
