@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B85FAB8E7C99013BFC698D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F41436D51BEB54F50087CCD4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41436D41BEB54F50087CCD4 /* BaseView.swift */; settings = {ASSET_TAGS = (); }; };
+		F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		F42E81E41BE9C5F0003BC43C /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E31BE9C5F0003BC43C /* BaseTableView.swift */; settings = {ASSET_TAGS = (); }; };
-		F42E81E61BE9C607003BC43C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E51BE9C607003BC43C /* BaseView.swift */; settings = {ASSET_TAGS = (); }; };
 		F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C21BCC97470055FD94 /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C31BCC97470055FD94 /* UIViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
@@ -24,8 +25,9 @@
 		3A7F27CC610C7CD6398158BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7E086E1C9FB8A68F05184D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B85FAB8E7C99013BFC698D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41436D41BEB54F50087CCD4 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfoUtil.swift; path = TAKSwiftSupport/Common/Util/AppInfoUtil.swift; sourceTree = "<group>"; };
 		F42E81E31BE9C5F0003BC43C /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableView.swift; path = TableView/BaseTableView.swift; sourceTree = "<group>"; };
-		F42E81E51BE9C607003BC43C /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = ../View/BaseView.swift; sourceTree = "<group>"; };
 		F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = TableView/BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F459F5C21BCC97470055FD94 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F459F5C31BCC97470055FD94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -67,6 +69,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F41436D31BEB54F50087CCD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F41436D41BEB54F50087CCD4 /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F41436D61BEB550D0087CCD4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */,
+			);
+			name = Util;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		F42E81E21BE9C5D0003BC43C /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +98,7 @@
 		F459F5C01BCC97470055FD94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F41436D61BEB550D0087CCD4 /* Util */,
 				F459F5C11BCC97470055FD94 /* Extention */,
 				F459F5C41BCC97470055FD94 /* View */,
 			);
@@ -98,19 +118,10 @@
 		F459F5C41BCC97470055FD94 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F459F5C51BCC97470055FD94 /* View */,
+				F41436D31BEB54F50087CCD4 /* View */,
 				F42E81E21BE9C5D0003BC43C /* TableView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F459F5C51BCC97470055FD94 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F42E81E51BE9C607003BC43C /* BaseView.swift */,
-			);
-			name = View;
-			path = Base;
 			sourceTree = "<group>";
 		};
 		F4AF70321BB2B3780019AB17 /* TAKSwiftSupport */ = {
@@ -279,9 +290,10 @@
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
 				F42E81E41BE9C5F0003BC43C /* BaseTableView.swift in Sources */,
 				F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */,
+				F41436D51BEB54F50087CCD4 /* BaseView.swift in Sources */,
 				F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */,
 				F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */,
-				F42E81E61BE9C607003BC43C /* BaseView.swift in Sources */,
+				F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
