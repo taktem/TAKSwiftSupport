@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -17,4 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.source_files = 'TAKSwiftSupport/Common/**/*.swift'
+  s.dependency 'RxSwift', '~> 2.0.0-beta.2'
+  s.dependency 'RxCocoa', '~> 2.0.0-beta.2'
+  s.dependency 'RxBlocking', '~> 2.0.0-beta.2'
 end
