@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B85FAB8E7C99013BFC698D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B85FAB8E7C99013BFC698D /* Pods.framework */; };
 		F41436D51BEB54F50087CCD4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41436D41BEB54F50087CCD4 /* BaseView.swift */; settings = {ASSET_TAGS = (); }; };
 		F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		F42E81E41BE9C5F0003BC43C /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E31BE9C5F0003BC43C /* BaseTableView.swift */; settings = {ASSET_TAGS = (); }; };
 		F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C21BCC97470055FD94 /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459F5C31BCC97470055FD94 /* UIViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		F4D9E8321BEC562100139193 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8301BEC562100139193 /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		F4D9E8331BEC562100139193 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8311BEC562100139193 /* UIViewExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		F4D9E8351BEC564400139193 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8341BEC564400139193 /* FileUtil.swift */; settings = {ASSET_TAGS = (); }; };
+		F4D9E83E1BEC604A00139193 /* RequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E83D1BEC604A00139193 /* RequestBase.swift */; settings = {ASSET_TAGS = (); }; };
+		F4D9E8461BEC97BA00139193 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8451BEC97BA00139193 /* ImageUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */; };
 		F4F960A31BAD90EC00D48AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A21BAD90EC00D48AF1 /* ViewController.swift */; };
 		F4F960A61BAD90EC00D48AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F960A41BAD90EC00D48AF1 /* Main.storyboard */; };
@@ -29,8 +32,11 @@
 		F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfoUtil.swift; path = TAKSwiftSupport/Common/Util/AppInfoUtil.swift; sourceTree = "<group>"; };
 		F42E81E31BE9C5F0003BC43C /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableView.swift; path = TableView/BaseTableView.swift; sourceTree = "<group>"; };
 		F42E81E71BE9C621003BC43C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = TableView/BaseTableViewCell.swift; sourceTree = "<group>"; };
-		F459F5C21BCC97470055FD94 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		F459F5C31BCC97470055FD94 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F4D9E8301BEC562100139193 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F4D9E8311BEC562100139193 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F4D9E8341BEC564400139193 /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtil.swift; path = TAKSwiftSupport/Common/Util/FileUtil.swift; sourceTree = "<group>"; };
+		F4D9E83D1BEC604A00139193 /* RequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBase.swift; path = Model/HttpRequest/RequestBase.swift; sourceTree = "<group>"; };
+		F4D9E8451BEC97BA00139193 /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageUtil.swift; path = TAKSwiftSupport/Common/Util/ImageUtil.swift; sourceTree = "<group>"; };
 		F4F9609D1BAD90EC00D48AF1 /* TAKSwiftSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAKSwiftSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F960A21BAD90EC00D48AF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */,
+				F4D9E8341BEC564400139193 /* FileUtil.swift */,
+				F4D9E8451BEC97BA00139193 /* ImageUtil.swift */,
 			);
 			name = Util;
 			path = ../..;
@@ -99,20 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				F41436D61BEB550D0087CCD4 /* Util */,
-				F459F5C11BCC97470055FD94 /* Extention */,
 				F459F5C41BCC97470055FD94 /* View */,
+				F4D9E83B1BEC602200139193 /* Model */,
 			);
 			name = Common;
 			path = TAKSwiftSupport/Common;
-			sourceTree = "<group>";
-		};
-		F459F5C11BCC97470055FD94 /* Extention */ = {
-			isa = PBXGroup;
-			children = (
-				F459F5C21BCC97470055FD94 /* UIColorExtension.swift */,
-				F459F5C31BCC97470055FD94 /* UIViewExtension.swift */,
-			);
-			path = Extention;
 			sourceTree = "<group>";
 		};
 		F459F5C41BCC97470055FD94 /* View */ = {
@@ -128,9 +127,36 @@
 			isa = PBXGroup;
 			children = (
 				F459F5C01BCC97470055FD94 /* Common */,
+				F4D9E82F1BEC562100139193 /* Extention */,
 			);
 			name = TAKSwiftSupport;
 			path = ../../../TAKSwiftSupport;
+			sourceTree = "<group>";
+		};
+		F4D9E82F1BEC562100139193 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				F4D9E8301BEC562100139193 /* UIColorExtension.swift */,
+				F4D9E8311BEC562100139193 /* UIViewExtension.swift */,
+			);
+			name = Extention;
+			path = TAKSwiftSupport/Extention;
+			sourceTree = "<group>";
+		};
+		F4D9E83B1BEC602200139193 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4D9E83C1BEC602D00139193 /* HttpRequest */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F4D9E83C1BEC602D00139193 /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				F4D9E83D1BEC604A00139193 /* RequestBase.swift */,
+			);
+			name = HttpRequest;
 			sourceTree = "<group>";
 		};
 		F4F960941BAD90EC00D48AF1 = {
@@ -287,12 +313,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F960A31BAD90EC00D48AF1 /* ViewController.swift in Sources */,
+				F4D9E8321BEC562100139193 /* UIColorExtension.swift in Sources */,
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
 				F42E81E41BE9C5F0003BC43C /* BaseTableView.swift in Sources */,
 				F42E81E81BE9C621003BC43C /* BaseTableViewCell.swift in Sources */,
 				F41436D51BEB54F50087CCD4 /* BaseView.swift in Sources */,
-				F459F5CA1BCC97470055FD94 /* UIViewExtension.swift in Sources */,
-				F459F5C91BCC97470055FD94 /* UIColorExtension.swift in Sources */,
+				F4D9E8461BEC97BA00139193 /* ImageUtil.swift in Sources */,
+				F4D9E83E1BEC604A00139193 /* RequestBase.swift in Sources */,
+				F4D9E8351BEC564400139193 /* FileUtil.swift in Sources */,
+				F4D9E8331BEC562100139193 /* UIViewExtension.swift in Sources */,
 				F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

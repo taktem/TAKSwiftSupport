@@ -20,4 +20,10 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift', '~> 2.0.0-beta.2'
   s.dependency 'RxCocoa', '~> 2.0.0-beta.2'
   s.dependency 'RxBlocking', '~> 2.0.0-beta.2'
+
+  s.subspec 'Extention' do |ss|
+    ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
+  end
+
+  Extention
 end
