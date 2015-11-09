@@ -19,7 +19,7 @@ public class RequestBase: NSObject {
     
     private let manager = Manager.sharedInstance
     
-    public func connect(
+    final public func connect(
         hostname hostname:String,
         path: String,
         method: Alamofire.Method,
@@ -28,8 +28,7 @@ public class RequestBase: NSObject {
             let urlString = hostname + path
             
             return create {
-                [unowned self]
-                observer in
+                [unowned self] observer in
                 
                 self.manager.request(
                     .GET,
@@ -40,6 +39,7 @@ public class RequestBase: NSObject {
                         case .Success(let value):
                             if let jsonDic = value as? NSDictionary {
                                 observer.on(.Next(jsonDic))
+                                observer.onCompleted()
                             }
                         case .Failure(let error):
                             // 通信のエラーハンドリングしたいなら

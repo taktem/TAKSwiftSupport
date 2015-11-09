@@ -24,6 +24,4 @@ Pod::Spec.new do |s|
   s.subspec 'Extention' do |ss|
     ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
   end
-
-  Extention
 end
