@@ -6,12 +6,12 @@ Swift用汎用クラス集
 ##Installation with CocoaPods
 ###Podfile
 ```ruby
-pod 'TAKSwiftSupport', '~> 0.1.2'
+pod 'TAKSwiftSupport', '~> 0.1.4'
 ```
 
 #### Use Exension
 ```ruby
-pod 'TAKSwiftSupport/Exension', '~> 0.1.2'
+pod 'TAKSwiftSupport/Exension', '~> 0.1.4'
 ```
 
 ###Requirements
