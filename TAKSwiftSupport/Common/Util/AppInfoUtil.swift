@@ -19,8 +19,7 @@ public class AppInfoUtil: NSObject {
     public class func classFromString(
         className: String) -> AnyClass! {
         let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
-        let st = "tttt"
-            st.validationAlphanumeric()
+            
         return classFromStringWithModule(appName, className: className)
     }
     

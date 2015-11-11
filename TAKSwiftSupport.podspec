@@ -13,24 +13,26 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
   s.author       = { "SOMTD" => "nishimura[at]taktem.com" }
-  s.dependency 'TAKSwiftSupport/Core'
-
+  s.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
+  s.platform     = :ios, '8.0'
+  s.requires_arc = true
+  
   s.subspec 'Core' do |ss|
-    ss.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
-    ss.platform     = :ios, '8.0'
-    ss.requires_arc = true
     ss.source_files = 'TAKSwiftSupport/Common/**/*.swift'
     ss.dependency 'Alamofire', '~> 3.1.1'
     ss.dependency 'RxSwift', '~> 2.0.0-beta.2'
     ss.dependency 'RxCocoa', '~> 2.0.0-beta.2'
     ss.dependency 'RxBlocking', '~> 2.0.0-beta.2'
+  end
 
   s.subspec 'Extention' do |ss|
     ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
+    ss.dependency 'TAKSwiftSupport/Core'
   end
 
   s.subspec 'CoreMotion' do |ss|
     ss.source_files = 'TAKSwiftSupport/CoreMotion/**/*.swift'
+    ss.dependency 'TAKSwiftSupport/Core'
   end
   
 end
