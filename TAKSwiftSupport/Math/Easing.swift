@@ -6,7 +6,7 @@
 //  Copyright © 2015年 TakuNishimura. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum EasingType: String {
     case Unknown = "Unknown"

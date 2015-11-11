@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -25,4 +25,9 @@ Pod::Spec.new do |s|
   s.subspec 'Extention' do |ss|
     ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
   end
+
+  s.subspec 'CoreMotion' do |ss|
+    ss.source_files = 'TAKSwiftSupport/CoreMotion/**/*.swift'
+  end
+  
 end

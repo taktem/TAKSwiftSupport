@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B85FAB8E7C99013BFC698D /* Pods.framework */; };
 		F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */; };
+		F44B37A51BF3216800BD7AC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B379D1BF3216800BD7AC5 /* BaseViewController.swift */; };
+		F44B37A61BF3216800BD7AC5 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B379F1BF3216800BD7AC5 /* BaseTableView.swift */; };
+		F44B37A71BF3216800BD7AC5 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37A01BF3216800BD7AC5 /* BaseTableViewCell.swift */; };
+		F44B37A81BF3216800BD7AC5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37A21BF3216800BD7AC5 /* BaseView.swift */; };
+		F44B37A91BF3216800BD7AC5 /* BaseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37A41BF3216800BD7AC5 /* BaseWebView.swift */; };
+		F44B37AB1BF329FA00BD7AC5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37AA1BF329FA00BD7AC5 /* StringExtension.swift */; };
+		F44B37AD1BF3538C00BD7AC5 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37AC1BF3538C00BD7AC5 /* UILabelExtension.swift */; };
+		F44B37B01BF3549100BD7AC5 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37AF1BF3549100BD7AC5 /* MotionManager.swift */; };
+		F44B37B21BF3597E00BD7AC5 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37B11BF3597E00BD7AC5 /* LogUtil.swift */; };
 		F481E6DF1BF19F2F009060F3 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F481E6DE1BF19F2F009060F3 /* Easing.swift */; };
 		F4D9E8321BEC562100139193 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8301BEC562100139193 /* UIColorExtension.swift */; };
 		F4D9E8331BEC562100139193 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8311BEC562100139193 /* UIViewExtension.swift */; };
@@ -27,6 +36,15 @@
 		7E086E1C9FB8A68F05184D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B85FAB8E7C99013BFC698D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInfoUtil.swift; path = TAKSwiftSupport/Common/Util/AppInfoUtil.swift; sourceTree = "<group>"; };
+		F44B379D1BF3216800BD7AC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F44B379F1BF3216800BD7AC5 /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		F44B37A01BF3216800BD7AC5 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F44B37A21BF3216800BD7AC5 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F44B37A41BF3216800BD7AC5 /* BaseWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebView.swift; sourceTree = "<group>"; };
+		F44B37AA1BF329FA00BD7AC5 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F44B37AC1BF3538C00BD7AC5 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		F44B37AF1BF3549100BD7AC5 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionManager.swift; path = TAKSwiftSupport/CoreMotion/MotionManager.swift; sourceTree = "<group>"; };
+		F44B37B11BF3597E00BD7AC5 /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = TAKSwiftSupport/Common/Util/LogUtil.swift; sourceTree = "<group>"; };
 		F481E6DE1BF19F2F009060F3 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = TAKSwiftSupport/Math/Easing.swift; sourceTree = "<group>"; };
 		F4D9E8301BEC562100139193 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F4D9E8311BEC562100139193 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -77,14 +95,68 @@
 				F41436D71BEB552A0087CCD4 /* AppInfoUtil.swift */,
 				F4D9E8341BEC564400139193 /* FileUtil.swift */,
 				F4D9E8451BEC97BA00139193 /* ImageUtil.swift */,
+				F44B37B11BF3597E00BD7AC5 /* LogUtil.swift */,
 			);
 			name = Util;
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		F44B379B1BF3216800BD7AC5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F44B379C1BF3216800BD7AC5 /* Controller */,
+				F44B379E1BF3216800BD7AC5 /* TableView */,
+				F44B37A11BF3216800BD7AC5 /* View */,
+				F44B37A31BF3216800BD7AC5 /* WebView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F44B379C1BF3216800BD7AC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F44B379D1BF3216800BD7AC5 /* BaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F44B379E1BF3216800BD7AC5 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F44B379F1BF3216800BD7AC5 /* BaseTableView.swift */,
+				F44B37A01BF3216800BD7AC5 /* BaseTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		F44B37A11BF3216800BD7AC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F44B37A21BF3216800BD7AC5 /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F44B37A31BF3216800BD7AC5 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F44B37A41BF3216800BD7AC5 /* BaseWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F44B37AE1BF3541E00BD7AC5 /* CoreMotion */ = {
+			isa = PBXGroup;
+			children = (
+				F44B37AF1BF3549100BD7AC5 /* MotionManager.swift */,
+			);
+			name = CoreMotion;
+			sourceTree = "<group>";
+		};
 		F459F5C01BCC97470055FD94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F44B379B1BF3216800BD7AC5 /* UI */,
 				F41436D61BEB550D0087CCD4 /* Util */,
 				F4D9E83B1BEC602200139193 /* Model */,
 			);
@@ -106,6 +178,7 @@
 				F459F5C01BCC97470055FD94 /* Common */,
 				F4D9E82F1BEC562100139193 /* Extention */,
 				F481E6DD1BF19EE0009060F3 /* Math */,
+				F44B37AE1BF3541E00BD7AC5 /* CoreMotion */,
 			);
 			name = TAKSwiftSupport;
 			path = ../../../TAKSwiftSupport;
@@ -116,6 +189,8 @@
 			children = (
 				F4D9E8301BEC562100139193 /* UIColorExtension.swift */,
 				F4D9E8311BEC562100139193 /* UIViewExtension.swift */,
+				F44B37AA1BF329FA00BD7AC5 /* StringExtension.swift */,
+				F44B37AC1BF3538C00BD7AC5 /* UILabelExtension.swift */,
 			);
 			name = Extention;
 			path = TAKSwiftSupport/Extention;
@@ -291,11 +366,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F481E6DF1BF19F2F009060F3 /* Easing.swift in Sources */,
+				F44B37A81BF3216800BD7AC5 /* BaseView.swift in Sources */,
+				F44B37AB1BF329FA00BD7AC5 /* StringExtension.swift in Sources */,
 				F4F960A31BAD90EC00D48AF1 /* ViewController.swift in Sources */,
+				F44B37B21BF3597E00BD7AC5 /* LogUtil.swift in Sources */,
 				F4D9E8321BEC562100139193 /* UIColorExtension.swift in Sources */,
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
+				F44B37A71BF3216800BD7AC5 /* BaseTableViewCell.swift in Sources */,
+				F44B37A91BF3216800BD7AC5 /* BaseWebView.swift in Sources */,
 				F4D9E8461BEC97BA00139193 /* ImageUtil.swift in Sources */,
+				F44B37A51BF3216800BD7AC5 /* BaseViewController.swift in Sources */,
+				F44B37B01BF3549100BD7AC5 /* MotionManager.swift in Sources */,
+				F44B37A61BF3216800BD7AC5 /* BaseTableView.swift in Sources */,
 				F4D9E83E1BEC604A00139193 /* RequestBase.swift in Sources */,
+				F44B37AD1BF3538C00BD7AC5 /* UILabelExtension.swift in Sources */,
 				F4D9E8351BEC564400139193 /* FileUtil.swift in Sources */,
 				F4D9E8331BEC562100139193 /* UIViewExtension.swift in Sources */,
 				F41436D81BEB552A0087CCD4 /* AppInfoUtil.swift in Sources */,
@@ -364,6 +448,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -414,6 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TAKSwiftSupport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taktem.TAKSwiftSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -426,6 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TAKSwiftSupport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.taktem.TAKSwiftSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
