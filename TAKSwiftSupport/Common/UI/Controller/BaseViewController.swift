@@ -22,19 +22,19 @@ public class BaseViewController: UIViewController {
     }
 }
 
-extension BaseViewController {
+extension UIViewController {
     public class func initWithStoryBoard(
         storyBoardName storyBoardName: String
-        ) -> BaseViewController? {
+        ) -> UIViewController? {
         let storyBoard = UIStoryboard.init(name: storyBoardName, bundle: NSBundle.mainBundle())
-        return storyBoard.instantiateInitialViewController() as? BaseViewController
+        return storyBoard.instantiateInitialViewController()
     }
     
     public class func initWithStoryBoard(
         storyBoardName storyBoardName: String,
         identifier: String
-        ) -> BaseViewController? {
+        ) -> UIViewController? {
         let storyBoard = UIStoryboard.init(name: storyBoardName, bundle: NSBundle.mainBundle())
-        return storyBoard.instantiateViewControllerWithIdentifier(identifier) as? BaseViewController
+        return storyBoard.instantiateViewControllerWithIdentifier(identifier)
     }
 }

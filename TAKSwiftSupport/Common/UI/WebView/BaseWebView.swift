@@ -55,17 +55,6 @@ public class BaseWebView: UIWebView, UIWebViewDelegate {
         delegate = self
     }
     
-    //MARK: - Util
-    public class func setUserAgent(string: String) {
-        let webView = UIWebView()
-        let userAgent = webView.stringByEvaluatingJavaScriptFromString("navigator.userAgent")
-        let customUserAgent = userAgent?.stringByAppendingString(string)
-        
-        if let val = customUserAgent {
-            NSUserDefaults.standardUserDefaults().registerDefaults(["UserAgent":val])
-        }
-    }
-    
     //MARK: - WEBView Delegate
     public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
@@ -86,5 +75,28 @@ public class BaseWebView: UIWebView, UIWebViewDelegate {
     
     public func webViewDidFinishLoad(webView: UIWebView) {
         baseWebViewDelegate?.webViewDidFinishLoad?(webView)
+    }
+}
+
+extension UIWebView {
+    //MARK: - Util
+    public class func addUserAgent(string: String) {
+        let webView = UIWebView(frame:CGRectZero)
+        let useragent : String = webView.sendJavaScript(string: "navigator.userAgent")!
+        
+        let addedUserAgent = useragent.stringByAppendingString(string)
+        
+        let agentDict = ["UserAgent":addedUserAgent]
+        NSUserDefaults.standardUserDefaults().registerDefaults(agentDict)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    /**
+     WebViewに対してJS Functionをコールする
+     
+     - parameter string: JS文字列
+     */
+    public func sendJavaScript(string string: String) -> String? {
+        return self.stringByEvaluatingJavaScriptFromString(string)
     }
 }

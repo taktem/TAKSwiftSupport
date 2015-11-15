@@ -12,3 +12,6 @@ pod 'RxBlocking', '~> 2.0.0-beta.2'
 
 # Map
 pod 'ObjectMapper', '~> 0.17'
+
+# Realm
+pod 'RealmSwift', '~> 0.96'

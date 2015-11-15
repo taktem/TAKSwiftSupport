@@ -19,6 +19,7 @@
 		F44B37B01BF3549100BD7AC5 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37AF1BF3549100BD7AC5 /* MotionManager.swift */; };
 		F44B37B21BF3597E00BD7AC5 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44B37B11BF3597E00BD7AC5 /* LogUtil.swift */; };
 		F481E6DF1BF19F2F009060F3 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F481E6DE1BF19F2F009060F3 /* Easing.swift */; };
+		F48C55C11BF8F22A00B7916F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48C55C01BF8F22A00B7916F /* RealmManager.swift */; };
 		F4D9E8321BEC562100139193 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8301BEC562100139193 /* UIColorExtension.swift */; };
 		F4D9E8331BEC562100139193 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8311BEC562100139193 /* UIViewExtension.swift */; };
 		F4D9E8351BEC564400139193 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9E8341BEC564400139193 /* FileUtil.swift */; };
@@ -46,6 +47,7 @@
 		F44B37AF1BF3549100BD7AC5 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionManager.swift; path = TAKSwiftSupport/CoreMotion/MotionManager.swift; sourceTree = "<group>"; };
 		F44B37B11BF3597E00BD7AC5 /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogUtil.swift; path = TAKSwiftSupport/Common/Util/LogUtil.swift; sourceTree = "<group>"; };
 		F481E6DE1BF19F2F009060F3 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = TAKSwiftSupport/Math/Easing.swift; sourceTree = "<group>"; };
+		F48C55C01BF8F22A00B7916F /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F4D9E8301BEC562100139193 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F4D9E8311BEC562100139193 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F4D9E8341BEC564400139193 /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtil.swift; path = TAKSwiftSupport/Common/Util/FileUtil.swift; sourceTree = "<group>"; };
@@ -172,12 +174,22 @@
 			name = Math;
 			sourceTree = "<group>";
 		};
+		F48C55BF1BF8F20400B7916F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F48C55C01BF8F22A00B7916F /* RealmManager.swift */,
+			);
+			name = Realm;
+			path = TAKSwiftSupport/Realm;
+			sourceTree = "<group>";
+		};
 		F4AF70321BB2B3780019AB17 /* TAKSwiftSupport */ = {
 			isa = PBXGroup;
 			children = (
 				F459F5C01BCC97470055FD94 /* Common */,
 				F4D9E82F1BEC562100139193 /* Extention */,
 				F481E6DD1BF19EE0009060F3 /* Math */,
+				F48C55BF1BF8F20400B7916F /* Realm */,
 				F44B37AE1BF3541E00BD7AC5 /* CoreMotion */,
 			);
 			name = TAKSwiftSupport;
@@ -376,6 +388,7 @@
 				F44B37A91BF3216800BD7AC5 /* BaseWebView.swift in Sources */,
 				F4D9E8461BEC97BA00139193 /* ImageUtil.swift in Sources */,
 				F44B37A51BF3216800BD7AC5 /* BaseViewController.swift in Sources */,
+				F48C55C11BF8F22A00B7916F /* RealmManager.swift in Sources */,
 				F44B37B01BF3549100BD7AC5 /* MotionManager.swift in Sources */,
 				F44B37A61BF3216800BD7AC5 /* BaseTableView.swift in Sources */,
 				F4D9E83E1BEC604A00139193 /* RequestBase.swift in Sources */,
