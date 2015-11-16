@@ -25,12 +25,9 @@ public class RequestBase: NSObject {
     
     // Requestオブジェクト
     private var request: Request?
-
-    /// 付与するヘッダ情報
-    public var httpHeaders = [String: String]()
     
     /**
-     基礎設定を指定して初期化
+     基礎設定を指定してリクエストオブジェクト生成
      
      - parameter hostName:   FQDN
      - parameter path:       URLパス
@@ -38,28 +35,26 @@ public class RequestBase: NSObject {
      - parameter parameters: クエリ
      - parameter encording:  リクエストエンコードタイプ
      */
-    public init(
-        hostName: String,
+    public func createRequest(
+        hostName hostName: String,
         path: String,
         method: Alamofire.Method,
         parameters: [String: AnyObject],
-        encording: ParameterEncoding) {
-        super.init()
-            
+        encording: ParameterEncoding,
+        headers: [String: String]) {
             request = self.manager.request(
                 method,
                 hostName + "/" + path,
                 parameters: parameters,
                 encoding: encording,
-                headers: httpHeaders)
+                headers: headers)
     }
     
-    private func setHeaders() {
-        for key: String in httpHeaders.keys {
-            
-        }
-    }
-    
+    /**
+     レスポンス形式がJsonの場合、Entityを指定してObjectMapperでマッピングまで行う
+     
+     - returns: <T: Responsible>
+     */
     final public func requstJson<T: Responsible>(
         ) -> Observable<T> {
             let source: Observable<T> = create { (observer: AnyObserver<T>) in
@@ -69,13 +64,13 @@ public class RequestBase: NSObject {
                         if let mapper = Mapper<T>().map(value) {
                             observer.onNext(mapper)
                             observer.onCompleted()
-                            print("\(self.request?.request?.URL):Result = \(value)")
+                            DLog("\(self.request?.request?.URL):Result = \(value)")
                         } else {
                             observer.onCompleted()
                         }
                         
                     case .Failure(let error):
-                        print("\(self.request?.request?.URL):Error = " + error.localizedDescription)
+                        DLog("\(self.request?.request?.URL):Error = " + error.localizedDescription)
                         observer.on(.Error(error))
                     }
                 }
