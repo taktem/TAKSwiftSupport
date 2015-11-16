@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Realm' do |ss|
     ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
-    ss.dependency 'RealmSwift, '~> 0.96'
+    ss.dependency 'RealmSwift', '~> 0.96'
   end
   
 end

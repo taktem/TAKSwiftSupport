@@ -8,7 +8,7 @@
 
 import UIKit
 
-import RealmSwift
+import Realm
 
 public class RealmManager: NSObject {
 

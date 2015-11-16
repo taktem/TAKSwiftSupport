@@ -13,43 +13,79 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
+import ObjectMapper
+
 /// APiリクエストのベースとなるクラス
 public class RequestBase: NSObject {
+    /// Rx
     public let requestDisposeBag = DisposeBag()
     
+    /// Alamofire本体
     private let manager = Manager.sharedInstance
     
-    final public func connect(
-        hostname hostname:String,
+    // Requestオブジェクト
+    private var request: Request?
+
+    /// 付与するヘッダ情報
+    public var httpHeaders = [String: String]()
+    
+    /**
+     基礎設定を指定して初期化
+     
+     - parameter hostName:   FQDN
+     - parameter path:       URLパス
+     - parameter method:     httpメソッド
+     - parameter parameters: クエリ
+     - parameter encording:  リクエストエンコードタイプ
+     */
+    public init(
+        hostName: String,
         path: String,
         method: Alamofire.Method,
-        parameters:[String:AnyObject]) -> Observable<NSDictionary?> {
+        parameters: [String: AnyObject],
+        encording: ParameterEncoding) {
+        super.init()
             
-            let urlString = hostname + path
+            request = self.manager.request(
+                method,
+                hostName + "/" + path,
+                parameters: parameters,
+                encoding: encording,
+                headers: httpHeaders)
+    }
+    
+    private func setHeaders() {
+        for key: String in httpHeaders.keys {
             
-            return create {
-                [unowned self] observer in
-                
-                self.manager.request(
-                    .GET,
-                    urlString,
-                    parameters: parameters)
-                    .responseJSON { response in
-                        switch response.result {
-                        case .Success(let value):
-                            if let jsonDic = value as? NSDictionary {
-                                observer.on(.Next(jsonDic))
-                                observer.onCompleted()
-                            }
-                        case .Failure(let error):
-                            // 通信のエラーハンドリングしたいなら
-                            observer.on(.Error(error))
+        }
+    }
+    
+    final public func requstJson<T: Responsible>(
+        ) -> Observable<T> {
+            let source: Observable<T> = create { (observer: AnyObserver<T>) in
+                self.request?.responseJSON { response in
+                    switch response.result {
+                    case .Success(let value):
+                        if let mapper = Mapper<T>().map(value) {
+                            observer.onNext(mapper)
+                            observer.onCompleted()
+                            print("\(self.request?.request?.URL):Result = \(value)")
+                        } else {
+                            observer.onCompleted()
                         }
+                        
+                    case .Failure(let error):
+                        print("\(self.request?.request?.URL):Error = " + error.localizedDescription)
+                        observer.on(.Error(error))
+                    }
                 }
                 
                 return AnonymousDisposable {
                     
                 }
             }
+            
+            return source
     }
+    
 }
