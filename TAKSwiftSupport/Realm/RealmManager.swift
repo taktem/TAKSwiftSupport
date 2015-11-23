@@ -8,8 +8,21 @@
 
 import UIKit
 
-import Realm
+import RealmSwift
 
 public class RealmManager: NSObject {
-
+    
+    final private class func realm() -> Realm {
+        
+        let realm = try! Realm()
+        return realm
+    }
+    
+//    final public func object<T: Object>() -> T {
+//        
+//    }
+    
+    final public class func add<T: Object>(object object: T) {
+        realm().add(object)
+    }
 }

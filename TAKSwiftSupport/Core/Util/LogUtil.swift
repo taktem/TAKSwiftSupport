@@ -10,7 +10,7 @@ import UIKit
 
 /**
  デバッグ時のみ出力するログ 
- Other Swift Flagsに-D DEBUGが必要
+ Pods内のOther Swift Flagsに-D DEBUGが必要
  */
 
 public func DLog(message: AnyObject?,

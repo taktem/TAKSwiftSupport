@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.1.10"
+  s.version      = "0.1.11"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -16,13 +16,15 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
+  s.default_subspec = 'Core'
   
   s.subspec 'Core' do |ss|
-    ss.source_files = 'TAKSwiftSupport/Common/**/*.swift'
+    ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
     ss.dependency 'Alamofire', '~> 3.1.1'
-    ss.dependency 'RxSwift', '~> 2.0.0-beta.2'
-    ss.dependency 'RxCocoa', '~> 2.0.0-beta.2'
-    ss.dependency 'RxBlocking', '~> 2.0.0-beta.2'
+    ss.dependency 'RxSwift', '~> 2.0.0-beta.3'
+    ss.dependency 'RxCocoa', '~> 2.0.0-beta.3'
+    ss.dependency 'RxBlocking', '~> 2.0.0-beta.3'
+    ss.dependency 'ObjectMapper', '~> 0.1'
   end
 
   s.subspec 'Extention' do |ss|
