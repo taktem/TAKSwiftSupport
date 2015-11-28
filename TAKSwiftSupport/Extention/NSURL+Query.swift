@@ -25,6 +25,10 @@ extension NSURL {
         // クエリを辞書化
         var result = [String: String]()
         for param in paramArray {
+            guard let param = param.stringByRemovingPercentEncoding else {
+                continue
+            }
+            
             let kvs = param.componentsSeparatedByString("=")
             
             if kvs.count > 1 {

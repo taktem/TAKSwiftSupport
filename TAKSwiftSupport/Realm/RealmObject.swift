@@ -9,6 +9,8 @@
 import UIKit
 
 import RealmSwift
+import Realm
+import Realm.Private
 
 import ObjectMapper
 
@@ -20,6 +22,10 @@ public class RealmObject:Object, RealmObjectable {
 
     required public init() {
         super.init()
+    }
+    
+    override init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
     }
     
     public func mapping(map: Map) {

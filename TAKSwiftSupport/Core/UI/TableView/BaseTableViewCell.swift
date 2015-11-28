@@ -8,17 +8,16 @@
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell {
+public class BaseTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        preservesSuperviewLayoutMargins = false
+        layoutMargins = UIEdgeInsetsZero
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

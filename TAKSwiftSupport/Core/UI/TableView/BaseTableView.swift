@@ -9,13 +9,9 @@
 import UIKit
 
 public class BaseTableView: UITableView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layoutMargins = UIEdgeInsetsZero
     }
-    */
-
 }

@@ -12,17 +12,18 @@ import RealmSwift
 
 public class RealmManager: NSObject {
     
-    final private class func realm() -> Realm {
-        
+    final public func add<T: Object>(object object: T) {
         let realm = try! Realm()
-        return realm
+        
+        try! realm.write {
+            realm.add(object)
+        }
     }
     
-//    final public func object<T: Object>() -> T {
-//        
-//    }
-    
-    final public class func add<T: Object>(object object: T) {
-        realm().add(object)
+    final public func readAll<T: RealmObject>() -> Results<T> {
+        let realm = try! Realm()
+        let result = realm.objects(T)
+        
+        return result
     }
 }
