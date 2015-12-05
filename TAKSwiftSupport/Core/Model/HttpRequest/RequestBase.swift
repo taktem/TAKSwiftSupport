@@ -15,6 +15,10 @@ import RxCocoa
 
 import ObjectMapper
 
+public enum Method: String {
+    case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
+}
+
 /// APiリクエストのベースとなるクラス
 public class RequestBase: NSObject {
     /// Rx
@@ -38,12 +42,12 @@ public class RequestBase: NSObject {
     public func createRequest(
         hostName hostName: String,
         path: String,
-        method: Alamofire.Method,
+        method: Method,
         parameters: [String: AnyObject],
         encording: ParameterEncoding,
         headers: [String: String]) {
             request = self.manager.request(
-                method,
+                Alamofire.Method(rawValue: method.rawValue)!,
                 hostName + "/" + path,
                 parameters: parameters,
                 encoding: encording,

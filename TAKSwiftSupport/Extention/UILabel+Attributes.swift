@@ -9,6 +9,18 @@
 import UIKit
 
 extension UILabel {
+    // http://iosfonts.com
+    enum FontName: String {
+        case Copperplate = "Copperplate"
+        case CopperplateBold = "Copperplate-Bold"
+        case CopperplateLight  = "Copperplate-Light"
+        case HelveticaNeue = "HelveticaNeue"
+        case HelveticaNeueBold = "HelveticaNeue-Bold"
+        case HiraKakuProW3 = "HiraKakuProN-W3"
+        case HiraKakuProW6 = "HiraKakuProN-W6"
+        case HiraMinProW3 = "HiraMinProN-W3"
+        case HiraMinProW6 = "HiraMinProN-W6"
+    }
     
     /**
     Fill Color
@@ -29,6 +41,12 @@ extension UILabel {
         return [
             NSStrokeColorAttributeName: color,
             NSStrokeWidthAttributeName: width
+        ]
+    }
+    
+    final class func attributeWithFont(fontName: FontName, size: Float) -> [String: UIFont] {
+        return [
+            NSFontAttributeName: UIFont(name: fontName.rawValue, size: CGFloat(size))!
         ]
     }
     
