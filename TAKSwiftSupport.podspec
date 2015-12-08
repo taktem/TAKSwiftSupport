@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.default_subspec = 'Core'
-  
+
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
     ss.dependency 'Alamofire', '~> 3.1.1'
     ss.dependency 'RxSwift', '~> 2.0.0-beta.4'
     ss.dependency 'RxCocoa', '~> 2.0.0-beta.4'
     ss.dependency 'RxBlocking', '~> 2.0.0-beta.4'
-    ss.dependency 'ObjectMapper', '~> 0.1'
+    ss.dependency 'ObjectMapper', '~> 1.0'
   end
 
   s.subspec 'Extention' do |ss|
@@ -44,7 +44,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Realm' do |ss|
     ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
+    ss.dependency 'TAKSwiftSupport/Core'
     ss.dependency 'RealmSwift', '~> 0.96'
   end
-  
+
 end

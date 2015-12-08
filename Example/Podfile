@@ -11,7 +11,7 @@ pod 'RxCocoa', '~> 2.0.0-beta.4'
 pod 'RxBlocking', '~> 2.0.0-beta.4'
 
 # Map
-pod 'ObjectMapper', '~> 0.1'
+pod 'ObjectMapper', '~> 1.0'
 
 # Realm
 pod 'RealmSwift', '~> 0.96'
