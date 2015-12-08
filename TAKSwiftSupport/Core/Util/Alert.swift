@@ -15,12 +15,19 @@ public class Alert: NSObject {
     
     typealias AlertCompleteBlock = (index: Int) -> Void
     
-    private var alertCompleteBlock: AlertCompleteBlock?
     private var alertController :UIAlertController?
+    private var observer: AnyObserver<Int>?
     private var strongSelf: Alert?
     
     private let alertWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
     
+    /**
+     内部処理用、AlertControllerインスタンス生成
+     
+     - parameter title:   タイトル
+     - parameter message: 本文
+     - parameter titles:  ボタンタイトル配列
+     */
     init(title: String,
         message: String!,
         titles: [String]) {
@@ -35,21 +42,35 @@ public class Alert: NSObject {
             }
     }
     
+    /**
+     各ボタンアクションを追加する
+     
+     - parameter title: ボタンタイトル
+     - parameter index: ボタンインデックス
+     
+     - returns: UIAlertAction
+     */
     private func addAction(
         title title: String,
         index:Int) -> UIAlertAction {
             return UIAlertAction(title: title, style: .Default, handler: {
-                [unowned self](action: UIAlertAction!) -> Void in
-                if let block = self.alertCompleteBlock {
-                    block(index: index)
+                [weak self](action: UIAlertAction!) -> Void in
+                self?.alertWindow.rootViewController?.view.removeFromSuperview()
+                self?.alertWindow.rootViewController = nil;
+                
+                self?.alertWindow.windowLevel = -1000
+                
+                if let observer = self?.observer {
+                    observer.on(.Next(index))
+                    observer.onCompleted()
                 }
+                self?.strongSelf = nil
                 })
     }
     
-    func didButtonTapped(callback: AlertCompleteBlock) {
-        alertCompleteBlock = callback
-    }
-    
+    /**
+     内部処理用、アラートインスタンス生成 & コールバック用オブジェクト保持
+     */
     private func show() -> Observable<Int> {
         strongSelf = self
         
@@ -66,19 +87,9 @@ public class Alert: NSObject {
             
         })
         
-        return create { observer -> Disposable in
-            self.didButtonTapped {
-                [weak self](index) -> Void in
-                self?.strongSelf = nil
-                
-                self?.alertWindow.rootViewController?.view.removeFromSuperview()
-                self?.alertWindow.rootViewController = nil;
-                
-                self?.alertWindow.windowLevel = -1000
-                
-                observer.on(.Next(index))
-                observer.onCompleted()
-            }
+        return create {
+            [weak self] (observer: AnyObserver<Int>) -> Disposable in
+            self?.observer = observer
             
             return AnonymousDisposable {
                 
@@ -86,6 +97,16 @@ public class Alert: NSObject {
         }
     }
     
+    /**
+     タイトル、メッセージ、コールバックを指定してアラートを表示する
+     特に、インスタンス保持の必要はない
+     
+     - parameter title:        タイトル
+     - parameter message:      本文
+     - parameter buttonTitles: ボタンタイトル配列
+     
+     - returns: Subscribeした場合は選択ボタンインデックスが通知される
+     */
     public class func show(
         title title: String,
         message: String!,

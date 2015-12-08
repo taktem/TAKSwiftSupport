@@ -29,24 +29,29 @@ class ExampleViewController: UIViewController {
     }
     
     //MARK: - ALERT Example
+    /**
+    アラート表示テスト
+    */
     @IBAction func alertButtonTapped(sender: UIButton) {
         Alert.show(
             title: "タイトル",
             message: "テストメッセージ",
             buttonTitles: ["OK", "Cancel"])
-            .subscribeNext {
-                [unowned self] selectedIndex -> Void in
-                switch selectedIndex {
-                case 0:
-                    self.alertLabel.text = "OK"
-                    
-                case 1:
-                    self.alertLabel.text = "Cancel"
-                    
-                default:
-                    break
-                }
-            }
-            .addDisposableTo(disposeBag)
+        
+        // 以下、コメントアウトを外したら、ボタン押下コールバックを取れるように
+//            .subscribeNext {
+//                [unowned self] selectedIndex -> Void in
+//                switch selectedIndex {
+//                case 0:
+//                    self.alertLabel.text = "OK"
+//                    
+//                case 1:
+//                    self.alertLabel.text = "Cancel"
+//                    
+//                default:
+//                    break
+//                }
+//            }
+//            .addDisposableTo(disposeBag)
     }
 }
