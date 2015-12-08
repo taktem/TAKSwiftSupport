@@ -12,13 +12,17 @@ import RxSwift
 import RxCocoa
 
 public class Alert: NSObject {
-    
-    typealias AlertCompleteBlock = (index: Int) -> Void
-    
+
+    /// AlertController
     private var alertController :UIAlertController?
+    
+    /// ボタン押下時のコールバック保持用
     private var observer: AnyObserver<Int>?
+    
+    /// 明示的に閉じるまで自身を強参照で保持する
     private var strongSelf: Alert?
     
+    /// 描画先のWindow
     private let alertWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
     
     /**
