@@ -26,4 +26,16 @@ public class RealmManager: NSObject {
         
         return result
     }
+    
+    final public func readEntity<T: RealmObject>(key key: String, value: String) -> Results<T> {
+        let realm = try! Realm()
+        return realm.objects(T).filter("\(key) = '\(value)'")
+    }
+    
+    final public func deleteObject(object: RealmObject) {
+        let realm = try! Realm()
+        try!  realm.write {
+            realm.delete(object)
+        }
+    }
 }

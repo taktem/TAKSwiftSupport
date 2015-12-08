@@ -15,6 +15,7 @@ public class BaseTableViewCell: UITableViewCell {
         
         preservesSuperviewLayoutMargins = false
         layoutMargins = UIEdgeInsetsZero
+        separatorInset = UIEdgeInsetsZero
     }
 
     override public func setSelected(selected: Bool, animated: Bool) {

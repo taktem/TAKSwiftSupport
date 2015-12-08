@@ -14,6 +14,7 @@ import RxCocoa
 public class Alert: NSObject {
     
     typealias AlertCompleteBlock = (index: Int) -> Void
+    
     private var alertCompleteBlock: AlertCompleteBlock?
     private var alertController :UIAlertController?
     private var strongSelf: Alert?
