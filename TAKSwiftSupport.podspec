@@ -27,9 +27,8 @@ Pod::Spec.new do |s|
     ss.dependency 'ObjectMapper', '~> 1.0'
   end
 
-  s.subspec 'Extention' do |ss|
-    ss.dependency 'TAKSwiftSupport/Core'
-    ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
+  s.subspec 'Extension' do |ss|
+    ss.source_files = 'TAKSwiftSupport/Extension/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
   end
 
