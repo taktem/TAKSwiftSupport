@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NSURL {
+public extension NSURL {
     
     var querys: [String: AnyObject]? {
         return getQuerys()
@@ -40,12 +40,12 @@ extension NSURL {
     }
     
     /**
-    クエリーに対して直接アクセス
-    
-    - parameter key: Query Key String
-    
-    - returns: Value
-    */
+     クエリーに対して直接アクセス
+     
+     - parameter key: Query Key String
+     
+     - returns: Value
+     */
     subscript(key: String) -> String? {
         guard let querys = querys else {
             return nil

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     func setLetterSpacing(space space: Int) {
         if let text = self.text {
             let attributedText = NSMutableAttributedString(string: text)

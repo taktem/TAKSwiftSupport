@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     // http://iosfonts.com
     enum FontName: String {
         case Copperplate = "Copperplate"
@@ -23,20 +23,20 @@ extension UILabel {
     }
     
     /**
-    Fill Color
-    
-    - parameter color: Fill Color
-    */
+     Fill Color
+     
+     - parameter color: Fill Color
+     */
     final class func attributeWithColor(color color: UIColor) -> [String: UIColor] {
         return [NSForegroundColorAttributeName: color]
     }
     
     /**
-    OutLine
-    
-    - parameter color: Line Color
-    - parameter width: Line Width
-    */
+     OutLine
+     
+     - parameter color: Line Color
+     - parameter width: Line Width
+     */
     final class func attributeWithOutline(color color: UIColor, width: Int) -> [String: AnyObject] {
         return [
             NSStrokeColorAttributeName: color,
@@ -51,13 +51,13 @@ extension UILabel {
     }
     
     /**
-    AttributeString生成
-    
-    - parameter string:     文字列
-    - parameter attributes: 装飾
-    
-    - returns: NSAttributedString
-    */
+     AttributeString生成
+     
+     - parameter string:     文字列
+     - parameter attributes: 装飾
+     
+     - returns: NSAttributedString
+     */
     final class func attributedText(string string: String, attributes: [String: AnyObject]) -> NSAttributedString {
         let attrText = NSAttributedString(
             string: string,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     // 16進数カラーコードからUIColorを生成する
     class func colorWithHexString(string string: String!, alpha:CGFloat) -> UIColor? {

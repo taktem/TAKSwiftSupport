@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     func width() -> CGFloat {
         return CGRectGetWidth(self.frame)
     }

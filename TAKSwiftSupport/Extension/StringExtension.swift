@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CompOperator {
+public enum CompOperator {
     case Less
     case LessOrEqual
     case Equal
@@ -16,18 +16,18 @@ enum CompOperator {
     case Greater
 }
 
-extension String {
+public extension String {
     
     //MARK: - Validation
     /**
-     文字数バリデーション
-     
-     :param: string          対象文字列
-     :param: validationCount 制約数値
-     :param: compOperator    比較ルール
-     
-     :returns: 比較ルールにそってバリデーションが通ればtrue
-     */
+    文字数バリデーション
+    
+    :param: string          対象文字列
+    :param: validationCount 制約数値
+    :param: compOperator    比較ルール
+    
+    :returns: 比較ルールにそってバリデーションが通ればtrue
+    */
     func validationTextCount(validationCount validationCount: Int, compOperator: CompOperator) -> Bool {
         let compare = self.characters.count - validationCount
         
@@ -44,7 +44,7 @@ extension String {
                 result = true
             }
             
-        case .Equal: 
+        case .Equal:
             if compare == 0 {
                 result = true
             }
