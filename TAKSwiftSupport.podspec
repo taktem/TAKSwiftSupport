@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Extention' do |ss|
+    ss.dependency 'TAKSwiftSupport/Core'
     ss.source_files = 'TAKSwiftSupport/Extention/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
   end
