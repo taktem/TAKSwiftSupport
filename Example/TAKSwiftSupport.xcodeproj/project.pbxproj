@@ -22,15 +22,15 @@
 		F48235741C16E48100C0B24C /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235591C16E48100C0B24C /* ImageUtil.swift */; };
 		F48235751C16E48100C0B24C /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482355A1C16E48100C0B24C /* LogUtil.swift */; };
 		F48235761C16E48100C0B24C /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482355C1C16E48100C0B24C /* MotionManager.swift */; };
-		F48235771C16E48100C0B24C /* NSURL+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482355E1C16E48100C0B24C /* NSURL+Query.swift */; };
-		F48235781C16E48100C0B24C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482355F1C16E48100C0B24C /* StringExtension.swift */; };
-		F48235791C16E48100C0B24C /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235601C16E48100C0B24C /* UIColor+HexValue.swift */; };
-		F482357A1C16E48100C0B24C /* UIColor+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235611C16E48100C0B24C /* UIColor+Spacing.swift */; };
-		F482357B1C16E48100C0B24C /* UILabel+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235621C16E48100C0B24C /* UILabel+Attributes.swift */; };
-		F482357C1C16E48100C0B24C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235631C16E48100C0B24C /* UIViewExtension.swift */; };
 		F482357D1C16E48100C0B24C /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235651C16E48100C0B24C /* Easing.swift */; };
 		F482357E1C16E48100C0B24C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235671C16E48100C0B24C /* RealmManager.swift */; };
 		F482357F1C16E48100C0B24C /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235681C16E48100C0B24C /* RealmObject.swift */; };
+		F4C04A031C197CD700202BDD /* NSURL+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C049FD1C197CD700202BDD /* NSURL+Query.swift */; };
+		F4C04A041C197CD700202BDD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C049FE1C197CD700202BDD /* StringExtension.swift */; };
+		F4C04A051C197CD700202BDD /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C049FF1C197CD700202BDD /* UIColor+HexValue.swift */; };
+		F4C04A061C197CD700202BDD /* UIColor+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C04A001C197CD700202BDD /* UIColor+Spacing.swift */; };
+		F4C04A071C197CD700202BDD /* UILabel+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C04A011C197CD700202BDD /* UILabel+Attributes.swift */; };
+		F4C04A081C197CD700202BDD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C04A021C197CD700202BDD /* UIViewExtension.swift */; };
 		F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */; };
 		F4F960A31BAD90EC00D48AF1 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A21BAD90EC00D48AF1 /* ExampleViewController.swift */; };
 		F4F960A61BAD90EC00D48AF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F960A41BAD90EC00D48AF1 /* Main.storyboard */; };
@@ -56,15 +56,15 @@
 		F48235591C16E48100C0B24C /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		F482355A1C16E48100C0B24C /* LogUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
 		F482355C1C16E48100C0B24C /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
-		F482355E1C16E48100C0B24C /* NSURL+Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Query.swift"; sourceTree = "<group>"; };
-		F482355F1C16E48100C0B24C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		F48235601C16E48100C0B24C /* UIColor+HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
-		F48235611C16E48100C0B24C /* UIColor+Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Spacing.swift"; sourceTree = "<group>"; };
-		F48235621C16E48100C0B24C /* UILabel+Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Attributes.swift"; sourceTree = "<group>"; };
-		F48235631C16E48100C0B24C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F48235651C16E48100C0B24C /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		F48235671C16E48100C0B24C /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F48235681C16E48100C0B24C /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		F4C049FD1C197CD700202BDD /* NSURL+Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Query.swift"; sourceTree = "<group>"; };
+		F4C049FE1C197CD700202BDD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F4C049FF1C197CD700202BDD /* UIColor+HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
+		F4C04A001C197CD700202BDD /* UIColor+Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Spacing.swift"; sourceTree = "<group>"; };
+		F4C04A011C197CD700202BDD /* UILabel+Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Attributes.swift"; sourceTree = "<group>"; };
+		F4C04A021C197CD700202BDD /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F4F9609D1BAD90EC00D48AF1 /* TAKSwiftSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAKSwiftSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F960A21BAD90EC00D48AF1 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
@@ -205,20 +205,6 @@
 			path = TAKSwiftSupport/CoreMotion;
 			sourceTree = "<group>";
 		};
-		F482355D1C16E48100C0B24C /* Extention */ = {
-			isa = PBXGroup;
-			children = (
-				F482355E1C16E48100C0B24C /* NSURL+Query.swift */,
-				F482355F1C16E48100C0B24C /* StringExtension.swift */,
-				F48235601C16E48100C0B24C /* UIColor+HexValue.swift */,
-				F48235611C16E48100C0B24C /* UIColor+Spacing.swift */,
-				F48235621C16E48100C0B24C /* UILabel+Attributes.swift */,
-				F48235631C16E48100C0B24C /* UIViewExtension.swift */,
-			);
-			name = Extention;
-			path = TAKSwiftSupport/Extention;
-			sourceTree = "<group>";
-		};
 		F48235641C16E48100C0B24C /* Math */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,12 +229,26 @@
 			children = (
 				F48235441C16E48100C0B24C /* Core */,
 				F482355B1C16E48100C0B24C /* CoreMotion */,
-				F482355D1C16E48100C0B24C /* Extention */,
+				F4C049FC1C197CD700202BDD /* Extension */,
 				F48235641C16E48100C0B24C /* Math */,
 				F48235661C16E48100C0B24C /* Realm */,
 			);
 			name = TAKSwiftSupport;
 			path = ../../../TAKSwiftSupport;
+			sourceTree = "<group>";
+		};
+		F4C049FC1C197CD700202BDD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F4C049FD1C197CD700202BDD /* NSURL+Query.swift */,
+				F4C049FE1C197CD700202BDD /* StringExtension.swift */,
+				F4C049FF1C197CD700202BDD /* UIColor+HexValue.swift */,
+				F4C04A001C197CD700202BDD /* UIColor+Spacing.swift */,
+				F4C04A011C197CD700202BDD /* UILabel+Attributes.swift */,
+				F4C04A021C197CD700202BDD /* UIViewExtension.swift */,
+			);
+			name = Extension;
+			path = TAKSwiftSupport/Extension;
 			sourceTree = "<group>";
 		};
 		F4F960941BAD90EC00D48AF1 = {
@@ -405,26 +405,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				F482356E1C16E48100C0B24C /* BaseTableViewCell.swift in Sources */,
+				F4C04A031C197CD700202BDD /* NSURL+Query.swift in Sources */,
 				F48235741C16E48100C0B24C /* ImageUtil.swift in Sources */,
-				F482357C1C16E48100C0B24C /* UIViewExtension.swift in Sources */,
-				F48235771C16E48100C0B24C /* NSURL+Query.swift in Sources */,
 				F482356B1C16E48100C0B24C /* BaseViewController.swift in Sources */,
 				F482356D1C16E48100C0B24C /* BaseTableView.swift in Sources */,
+				F4C04A061C197CD700202BDD /* UIColor+Spacing.swift in Sources */,
 				F48235691C16E48100C0B24C /* RequestBase.swift in Sources */,
 				F4F960A31BAD90EC00D48AF1 /* ExampleViewController.swift in Sources */,
+				F4C04A051C197CD700202BDD /* UIColor+HexValue.swift in Sources */,
 				F482356A1C16E48100C0B24C /* Responsible.swift in Sources */,
+				F4C04A041C197CD700202BDD /* StringExtension.swift in Sources */,
+				F4C04A071C197CD700202BDD /* UILabel+Attributes.swift in Sources */,
 				F48235751C16E48100C0B24C /* LogUtil.swift in Sources */,
-				F482357A1C16E48100C0B24C /* UIColor+Spacing.swift in Sources */,
 				F482356F1C16E48100C0B24C /* BaseView.swift in Sources */,
-				F48235791C16E48100C0B24C /* UIColor+HexValue.swift in Sources */,
 				F482357F1C16E48100C0B24C /* RealmObject.swift in Sources */,
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
 				F48235711C16E48100C0B24C /* Alert.swift in Sources */,
 				F48235701C16E48100C0B24C /* BaseWebView.swift in Sources */,
 				F48235731C16E48100C0B24C /* FileUtil.swift in Sources */,
 				F482357E1C16E48100C0B24C /* RealmManager.swift in Sources */,
-				F48235781C16E48100C0B24C /* StringExtension.swift in Sources */,
-				F482357B1C16E48100C0B24C /* UILabel+Attributes.swift in Sources */,
+				F4C04A081C197CD700202BDD /* UIViewExtension.swift in Sources */,
 				F482356C1C16E48100C0B24C /* LoadingView.swift in Sources */,
 				F482357D1C16E48100C0B24C /* Easing.swift in Sources */,
 				F48235721C16E48100C0B24C /* AppInfoUtil.swift in Sources */,
