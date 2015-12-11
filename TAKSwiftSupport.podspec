@@ -14,13 +14,13 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
   s.author       = { "SOMTD" => "nishimura[at]taktem.com" }
   s.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
+  s.xcconfig     = { "Other Swift Flags" => "-D DEBUG" } => ["Debug"]
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
-    ss.xcconfig = {"Other Swift Flags" => "-D DEBUG"}
     ss.dependency 'Alamofire', '~> 3.1.1'
     ss.dependency 'RxSwift', '~> 2.0.0-beta.4'
     ss.dependency 'RxCocoa', '~> 2.0.0-beta.4'
