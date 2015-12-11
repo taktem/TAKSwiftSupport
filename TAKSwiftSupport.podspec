@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
   s.author       = { "SOMTD" => "nishimura[at]taktem.com" }
   s.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
-  s.pod_target_xcconfig = { 'Other_Swift_Flags' => '-D DEBUG' }
+  s.compiler_flags = 'Other_Swift_Flags=-D DEBUG'
   # s.xcconfig     = { "Other Swift Flags" => "-D DEBUG" } => ["Debug"]
   s.platform     = :ios, '8.0'
   s.requires_arc = true
