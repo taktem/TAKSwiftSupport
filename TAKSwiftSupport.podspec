@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
+    ss.xcconfig = { "Other_Swift_Flags[config=Debug]" => "-D DEBUG" }
     ss.dependency 'Alamofire', '~> 3.1.1'
     ss.dependency 'RxSwift', '~> 2.0.0-beta.4'
     ss.dependency 'RxCocoa', '~> 2.0.0-beta.4'
