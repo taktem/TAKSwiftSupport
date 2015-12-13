@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B85FAB8E7C99013BFC698D /* Pods.framework */; };
+		F43FBD451C1D0DDE0031825F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43FBD441C1D0DDE0031825F /* LocationManager.swift */; };
+		F43FBD471C1D0DEB0031825F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43FBD461C1D0DEB0031825F /* CoreLocation.framework */; };
+		F43FBD491C1D0DEF0031825F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43FBD481C1D0DEF0031825F /* CoreMotion.framework */; };
 		F48235691C16E48100C0B24C /* RequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235471C16E48100C0B24C /* RequestBase.swift */; };
 		F482356A1C16E48100C0B24C /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48235481C16E48100C0B24C /* Responsible.swift */; };
 		F482356B1C16E48100C0B24C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482354B1C16E48100C0B24C /* BaseViewController.swift */; };
@@ -42,6 +45,9 @@
 		3A7F27CC610C7CD6398158BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7E086E1C9FB8A68F05184D16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B85FAB8E7C99013BFC698D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43FBD441C1D0DDE0031825F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F43FBD461C1D0DEB0031825F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F43FBD481C1D0DEF0031825F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		F48235471C16E48100C0B24C /* RequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBase.swift; sourceTree = "<group>"; };
 		F48235481C16E48100C0B24C /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
 		F482354B1C16E48100C0B24C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43FBD491C1D0DEF0031825F /* CoreMotion.framework in Frameworks */,
+				F43FBD471C1D0DEB0031825F /* CoreLocation.framework in Frameworks */,
 				92B07807695BA689C1F2C71B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +97,8 @@
 		1B45422CCA894342B917C554 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F43FBD481C1D0DEF0031825F /* CoreMotion.framework */,
+				F43FBD461C1D0DEB0031825F /* CoreLocation.framework */,
 				D3B85FAB8E7C99013BFC698D /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -101,6 +111,15 @@
 				3A7F27CC610C7CD6398158BE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F43FBD431C1D0DC50031825F /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				F43FBD441C1D0DDE0031825F /* LocationManager.swift */,
+			);
+			name = CoreLocation;
+			path = TAKSwiftSupport/CoreLocation;
 			sourceTree = "<group>";
 		};
 		F48235441C16E48100C0B24C /* Core */ = {
@@ -229,6 +248,7 @@
 			children = (
 				F48235441C16E48100C0B24C /* Core */,
 				F482355B1C16E48100C0B24C /* CoreMotion */,
+				F43FBD431C1D0DC50031825F /* CoreLocation */,
 				F4C049FC1C197CD700202BDD /* Extension */,
 				F48235641C16E48100C0B24C /* Math */,
 				F48235661C16E48100C0B24C /* Realm */,
@@ -416,6 +436,7 @@
 				F482356A1C16E48100C0B24C /* Responsible.swift in Sources */,
 				F4C04A041C197CD700202BDD /* StringExtension.swift in Sources */,
 				F4C04A071C197CD700202BDD /* UILabel+Attributes.swift in Sources */,
+				F43FBD451C1D0DDE0031825F /* LocationManager.swift in Sources */,
 				F48235751C16E48100C0B24C /* LogUtil.swift in Sources */,
 				F482356F1C16E48100C0B24C /* BaseView.swift in Sources */,
 				F482357F1C16E48100C0B24C /* RealmObject.swift in Sources */,

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.2.5"
+  s.version      = "0.3"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
   s.subspec 'CoreMotion' do |ss|
     ss.source_files = 'TAKSwiftSupport/CoreMotion/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
+    ss.frameworks = 'CoreMotion'
   end
 
   s.subspec 'Math' do |ss|
@@ -46,6 +47,12 @@ Pod::Spec.new do |s|
     ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
     ss.dependency 'RealmSwift', '~> 0.96'
+  end
+
+  s.subspec 'CoreLocation' do |ss|
+    ss.source_files = 'TAKSwiftSupport/CoreLocation/**/*.swift'
+    ss.dependency 'TAKSwiftSupport/Core'
+    ss.frameworks = 'CoreLocation'
   end
 
 end

@@ -9,7 +9,6 @@
 import UIKit
 
 import RxSwift
-import RxCocoa
 
 public class Alert: NSObject {
 

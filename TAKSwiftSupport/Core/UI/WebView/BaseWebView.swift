@@ -85,9 +85,9 @@ public class BaseWebView: UIWebView, UIWebViewDelegate {
     //MARK: - WEBView Delegate
     public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         var allow = true
-        if let result = baseWebViewDelegate?.webView?(webView, shouldStartLoadWithRequest: request, navigationType: navigationType) {
-            allow = result
-        }
+//        if let result = baseWebViewDelegate?.webView?(webView, shouldStartLoadWithRequest: request, navigationType: navigationType) {
+//            allow = result
+//        }
         
         allow = !(
             !allow || // Superクラスで非許可の場合は中断
@@ -100,15 +100,15 @@ public class BaseWebView: UIWebView, UIWebViewDelegate {
     }
     
     public func webViewDidStartLoad(webView: UIWebView) {
-        baseWebViewDelegate?.webViewDidStartLoad?(webView)
+        
     }
     
     public func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        baseWebViewDelegate?.webView?(webView, didFailLoadWithError: error)
+        
     }
     
     public func webViewDidFinishLoad(webView: UIWebView) {
-        baseWebViewDelegate?.webViewDidFinishLoad?(webView)
+        
     }
     
     // Open Permission
