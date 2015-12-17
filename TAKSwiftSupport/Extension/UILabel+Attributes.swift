@@ -16,6 +16,7 @@ public extension UILabel {
         case CopperplateLight  = "Copperplate-Light"
         case HelveticaNeue = "HelveticaNeue"
         case HelveticaNeueBold = "HelveticaNeue-Bold"
+        case HelveticaNeueCondensedBlack = "HelveticaNeue-CondensedBlack"
         case HiraKakuProW3 = "HiraKakuProN-W3"
         case HiraKakuProW6 = "HiraKakuProN-W6"
         case HiraMinProW3 = "HiraMinProN-W3"
