@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.3.3"
+  s.version      = "0.3.4"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
