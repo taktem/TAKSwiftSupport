@@ -26,6 +26,33 @@ public extension UIImage {
     }
     
     /**
+     対象をマスク画像を指定してマスク済画像を生成する
+     
+     - parameter sourceImage: マスク対象
+     - parameter maskImage:   マスク画像（モノトーン画像・黒領域が生き）
+     
+     - returns: マスク済画像
+     */
+    class func createMaskedImage(sourceImage sourceImage: UIImage, maskImage: UIImage) -> UIImage? {
+        
+        let mask = CGImageMaskCreate(
+            CGImageGetWidth(maskImage.CGImage),
+            CGImageGetHeight(maskImage.CGImage),
+            CGImageGetBitsPerComponent(maskImage.CGImage),
+            CGImageGetBitsPerPixel(maskImage.CGImage),
+            CGImageGetBytesPerRow(maskImage.CGImage),
+            CGImageGetDataProvider(maskImage.CGImage),
+            nil,
+            false)
+        
+        if let maskedImage = CGImageCreateWithMask(sourceImage.CGImage, mask) {
+            return UIImage(CGImage: maskedImage)
+        } else {
+            return nil
+        }
+    }
+    
+    /**
      文字列と訂正レベルを指定してQRコードを生成する
      */
     class func createQRCode(
