@@ -45,9 +45,14 @@ public class RequestBase: NSObject {
         parameters: [String: AnyObject],
         encording: ParameterEncoding,
         headers: [String: String]) {
+            
+            guard let requestUrl = hostName.append(path) else {
+                return
+            }
+            
             request = self.manager.request(
                 Alamofire.Method(rawValue: method.rawValue)!,
-                hostName + "/" + path,
+                requestUrl,
                 parameters: parameters,
                 encoding: encording,
                 headers: headers)

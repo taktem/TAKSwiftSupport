@@ -1,5 +1,5 @@
 //
-//  StringExtension.swift
+//  String+Validation.swift
 //  TAKSwiftSupport
 //
 //  Created by 西村 拓 on 2015/11/11.
