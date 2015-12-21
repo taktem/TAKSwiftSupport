@@ -46,7 +46,7 @@ public class RequestBase: NSObject {
         encording: ParameterEncoding,
         headers: [String: String]) {
             
-            guard let requestUrl = hostName.append(path) else {
+            guard let requestUrl = hostName.append(pathComponent: path) else {
                 return
             }
             

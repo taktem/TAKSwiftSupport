@@ -12,7 +12,7 @@ import UIKit
 public extension String {
     
     /// URL Pathパターン
-    func append( pathComponent: String) -> String? {
+    func append(pathComponent pathComponent: String) -> String? {
         guard let url = NSURL(string: self) else {
             return nil
         }
