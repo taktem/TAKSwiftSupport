@@ -75,6 +75,11 @@ public class Alert: NSObject {
      内部処理用、アラートインスタンス生成 & コールバック用オブジェクト保持
      */
     private func show() -> Observable<Int> {
+        guard let alertController = alertController else {
+            DLog("alertController is not created")
+            return empty()
+        }
+        
         strongSelf = self
         
         let viewController = UIViewController()
@@ -84,11 +89,13 @@ public class Alert: NSObject {
         alertWindow.rootViewController = viewController
         alertWindow.makeKeyAndVisible()
         
-        viewController.presentViewController(
-            alertController!,
-            animated: true, completion: { () -> Void in
-            
-        })
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            viewController.presentViewController(
+                alertController,
+                animated: true, completion: { () -> Void in
+                    
+            })
+        }
         
         return create {
             [weak self] (observer: AnyObserver<Int>) -> Disposable in

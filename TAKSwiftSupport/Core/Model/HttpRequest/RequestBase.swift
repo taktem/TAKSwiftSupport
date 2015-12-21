@@ -63,13 +63,46 @@ public class RequestBase: NSObject {
      
      - returns: <T: Responsible>
      */
-    final public func requstJson<T: Responsible>(
+    final public func requstJsonDictionary<T: Responsible>(
         ) -> Observable<T> {
             let source: Observable<T> = create { (observer: AnyObserver<T>) in
                 self.request?.responseJSON { response in
                     switch response.result {
                     case .Success(let value):
                         if let mapper = Mapper<T>().map(value) {
+                            observer.onNext(mapper)
+                            observer.onCompleted()
+                            DLog("\(self.request?.request?.URL):Result = \(value)")
+                        } else {
+                            observer.onCompleted()
+                        }
+                        
+                    case .Failure(let error):
+                        DLog("\(self.request?.request?.URL):Error = " + error.localizedDescription)
+                        observer.on(.Error(error))
+                    }
+                }
+                
+                return AnonymousDisposable {
+                    
+                }
+            }
+            
+            return source
+    }
+    
+    /**
+     レスポンス形式がルート配列のJsonの場合、Entityを指定してObjectMapperでマッピングまで行う
+     
+     - returns: <T: [Responsible]>
+     */
+    final public func requstJsonArray<T: Responsible>(
+        ) -> Observable<[T]> {
+            let source: Observable<[T]> = create { (observer: AnyObserver<[T]>) in
+                self.request?.responseJSON { response in
+                    switch response.result {
+                    case .Success(let value):
+                        if let mapper = Mapper<T>().mapArray(value) {
                             observer.onNext(mapper)
                             observer.onCompleted()
                             DLog("\(self.request?.request?.URL):Result = \(value)")

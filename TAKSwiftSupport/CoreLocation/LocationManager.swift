@@ -25,7 +25,8 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     
     /// Location
-    public let currentLocation = Variable(CLLocation(latitude:35.681382, longitude: 139.7638953))
+    private let stockLocation: Variable<CLLocation?> = Variable(nil)
+    public let currentLocation: Variable<CLLocation?> = Variable(nil)
     
     /// 要求精度
     public var verticalAccuracy = 100.0
@@ -56,32 +57,36 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     ロケーション取得開始
     */
     public func startUpdatingLocation() {
+        stockLocation
+            .filter({ location -> Bool in
+                return location != nil
+            })
+            .subscribeNext {
+                [weak self] location -> Void in
+                
+                self?.currentLocation.value = location
+            }
+            .addDisposableTo(disposeBag)
+        
         manager.startUpdatingLocation()
     }
     
     public func startUpdatingLocationOnce() {
-        currentLocation
-            .filter {
-                [weak self] location -> Bool in
-                
-                var result = true
-                
-                // 精度フィルタ
-                if location.verticalAccuracy < self?.verticalAccuracy &&
-                    location.horizontalAccuracy < self?.horizontalAccuracy {
-                        result = true
-                }
-                
-                return result
-            }
+        stockLocation
+            .filter({ location -> Bool in
+                return location != nil
+            })
             .take(1)
             .subscribeNext {
                 [weak self] location -> Void in
+                
+                self?.currentLocation.value = location
+                
                 self?.stopUpdatingLocation()
             }
             .addDisposableTo(disposeBag)
         
-        startUpdatingLocation()
+        manager.startUpdatingLocation()
     }
     
     
@@ -105,7 +110,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
                 return
         }
         
-        currentLocation.value = location
+        stockLocation.value = location
     }
     
     public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
