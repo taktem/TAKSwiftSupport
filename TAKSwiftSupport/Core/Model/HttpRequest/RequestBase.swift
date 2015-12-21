@@ -63,7 +63,7 @@ public class RequestBase: NSObject {
      
      - returns: <T: Responsible>
      */
-    final public func requstJsonDictionary<T: Responsible>(
+    final public func requestJsonDictionary<T: Responsible>(
         ) -> Observable<T> {
             let source: Observable<T> = create { (observer: AnyObserver<T>) in
                 self.request?.responseJSON { response in
@@ -96,7 +96,7 @@ public class RequestBase: NSObject {
      
      - returns: <T: [Responsible]>
      */
-    final public func requstJsonArray<T: Responsible>(
+    final public func requestJsonArray<T: Responsible>(
         ) -> Observable<[T]> {
             let source: Observable<[T]> = create { (observer: AnyObserver<[T]>) in
                 self.request?.responseJSON { response in
