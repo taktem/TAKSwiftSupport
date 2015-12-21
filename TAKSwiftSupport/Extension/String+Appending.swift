@@ -12,11 +12,15 @@ import UIKit
 public extension String {
     
     /// URL Pathパターン
-    func append(pathComponent pathComponent: String) -> String? {
+    func appending(pathComponent pathComponent: String?) -> String? {
         guard let url = NSURL(string: self) else {
             return nil
         }
         
-        return url.URLByAppendingPathComponent(pathComponent).absoluteString
+        guard let path = pathComponent else {
+            return url.absoluteString
+        }
+        
+        return url.URLByAppendingPathComponent(path).absoluteString
     }
 }
