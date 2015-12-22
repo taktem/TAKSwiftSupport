@@ -11,6 +11,8 @@ import UIKit
 public extension UILabel {
     // http://iosfonts.com
     enum FontName: String {
+        case AvenirLight = "Avenir-Light"
+        case AvenirMedium = "Avenir-Medium"
         case Copperplate = "Copperplate"
         case CopperplateBold = "Copperplate-Bold"
         case CopperplateLight  = "Copperplate-Light"
@@ -21,6 +23,7 @@ public extension UILabel {
         case HiraKakuProW6 = "HiraKakuProN-W6"
         case HiraMinProW3 = "HiraMinProN-W3"
         case HiraMinProW6 = "HiraMinProN-W6"
+        case OptimaRegular = "Optima-Regular"
     }
     
     /**
