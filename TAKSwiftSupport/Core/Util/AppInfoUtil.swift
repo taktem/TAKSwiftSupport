@@ -37,4 +37,17 @@ public class AppInfoUtil: NSObject {
             return NSClassFromString(moduleName + "." + className)
     }
     
+    /**
+     クラスからクラス名の文字列を取得
+     
+     - parameter object: 対象クラス
+     
+     - returns: クラス名
+     */
+    public class func classNameString(object: AnyClass) -> String? {
+        if let className = NSStringFromClass(object).componentsSeparatedByString(".").last as? String {
+            return className
+        }
+        return nil
+    }
 }
