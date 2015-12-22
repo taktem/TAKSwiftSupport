@@ -44,10 +44,10 @@ public class AppInfoUtil: NSObject {
      
      - returns: クラス名
      */
-    public class func classNameString(object: AnyClass) -> String {
+    public class func classNameString(object: AnyClass) -> String? {
         if let className = NSStringFromClass(object).componentsSeparatedByString(".").last as? String {
             return className
         }
-        return ""
+        return nil
     }
 }
