@@ -44,10 +44,10 @@ public class RequestBase: NSObject {
         method: Method,
         parameters: [String: AnyObject],
         encording: ParameterEncoding,
-        headers: [String: String]) {
+        headers: [String: String]) -> Request? {
             
             guard let requestUrl = hostName.appending(pathComponent: path) else {
-                return
+                return request
             }
             
             request = self.manager.request(
@@ -56,6 +56,8 @@ public class RequestBase: NSObject {
                 parameters: parameters,
                 encoding: encording,
                 headers: headers)
+            
+            return request
     }
     
     /**
@@ -63,7 +65,7 @@ public class RequestBase: NSObject {
      
      - returns: <T: Responsible>
      */
-    final public func requestJsonDictionary<T: Responsible>(
+    final public func requestJsonDictionary<T: Responsible>( 
         ) -> Observable<T> {
             let source: Observable<T> = create { (observer: AnyObserver<T>) in
                 self.request?.responseJSON { response in

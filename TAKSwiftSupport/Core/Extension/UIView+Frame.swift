@@ -10,27 +10,27 @@ import UIKit
 
 public extension UIView {
     func width() -> CGFloat {
-        return CGRectGetWidth(self.frame)
+        return CGRectGetWidth(frame)
     }
     
     func setWidth(width:CGFloat) {
-        self.frame = CGRectMake(
-            self.frame.origin.x,
-            self.frame.origin.y,
+        frame = CGRectMake(
+            frame.origin.x,
+            frame.origin.y,
             width,
-            self.frame.size.height
+            frame.size.height
         )
     }
     
     func height() -> CGFloat {
-        return CGRectGetWidth(self.frame)
+        return CGRectGetWidth(frame)
     }
     
     func setHeight(height:CGFloat) {
-        self.frame = CGRectMake(
-            self.frame.origin.x,
-            self.frame.origin.y,
-            self.frame.size.width,
+        frame = CGRectMake(
+            frame.origin.x,
+            frame.origin.y,
+            frame.size.width,
             height
         )
     }
