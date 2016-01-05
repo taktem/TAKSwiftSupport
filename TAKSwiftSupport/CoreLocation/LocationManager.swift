@@ -57,7 +57,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     ロケーション取得開始
     */
     public func startUpdatingLocation() {
-        stockLocation
+        stockLocation.asObservable()
             .filter({ location -> Bool in
                 return location != nil
             })
@@ -72,7 +72,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     public func startUpdatingLocationOnce() {
-        stockLocation
+        stockLocation.asObservable()
             .filter({ location -> Bool in
                 return location != nil
             })
