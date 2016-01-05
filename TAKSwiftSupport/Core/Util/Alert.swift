@@ -77,7 +77,7 @@ public class Alert: NSObject {
     private func show() -> Observable<Int> {
         guard let alertController = alertController else {
             DLog("alertController is not created")
-            return empty()
+            return Observable.empty()
         }
         
         strongSelf = self
@@ -97,7 +97,7 @@ public class Alert: NSObject {
             })
         }
         
-        return create {
+        return Observable.create {
             [weak self] (observer: AnyObserver<Int>) -> Disposable in
             self?.observer = observer
             
