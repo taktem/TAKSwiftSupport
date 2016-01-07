@@ -48,6 +48,12 @@ public extension UILabel {
         ]
     }
     
+    /**
+     Font
+     
+     - parameter fontName: enum FontName
+     - parameter size:     font size
+     */
     final class func attributeWithFont(fontName: FontName, size: Float) -> [String: UIFont] {
         return [
             NSFontAttributeName: UIFont(name: fontName.rawValue, size: CGFloat(size))!
@@ -55,10 +61,34 @@ public extension UILabel {
     }
     
     /**
-     AttributeString生成
+     Line Height
      
-     - parameter string:     文字列
-     - parameter attributes: 装飾
+     - parameter lineHeight: Line Height
+     */
+    final class func attributeWithLineHeight(lineHeight: Float) -> [String: NSParagraphStyle] {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = CGFloat(lineHeight);
+        paragraphStyle.maximumLineHeight = CGFloat(lineHeight);
+        
+        return [NSParagraphStyleAttributeName: paragraphStyle]
+    }
+    
+    /**
+     Kerning
+     
+     - parameter em: Letter Spacing
+     */
+    final class func attributeWithKerning(em: Float) -> [String: Float] {
+        return [
+            NSKernAttributeName: em
+        ]
+    }
+    
+    /**
+     Make AttributeString
+     
+     - parameter string:     String
+     - parameter attributes: [Attribute]
      
      - returns: NSAttributedString
      */
@@ -71,7 +101,7 @@ public extension UILabel {
         return attrText
     }
     
-    // AttributeStringを結合
+    // Join AttributeString
     final func joinAttributesStrings(strings strings: [NSAttributedString]) {
         let attrStrings = NSMutableAttributedString()
         for string in strings {
