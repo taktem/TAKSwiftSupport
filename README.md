@@ -6,26 +6,11 @@ Swift用汎用クラス集
 ##Installation with CocoaPods
 
 ###Requirements
-requires iOS 8 & xCode7
+requires iOS 8 & xCode7.2
 
 ###Podfile
 ```ruby
-pod 'TAKSwiftSupport', '~> 0.3.6'
-```
-
-#### Use Exension
-```ruby
-pod 'TAKSwiftSupport/Extension', '~> 0.3.6'
-```
-
-#### Use CoreMotion
-```ruby
-pod 'TAKSwiftSupport/CoreMotion', '~> 0.3.6'
-```
-
-### User Realm
-```ruby
-pod 'TAKSwiftSupport/Realm', '~> 0.3.6'
+pod 'TAKSwiftSupport/Core', '~> 0.3.16'
 ```
 
 License
