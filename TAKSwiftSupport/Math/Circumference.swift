@@ -49,8 +49,7 @@ public class Circumference: NSObject {
     public class func pointOnCircumference(
         radius radius: Double,
         radian: Double,
-        center: CGPoint,
-        size: CGSize
+        center: CGPoint
         ) -> CGPoint {
             let x = pointOnCircumference(radius: radius, radian: radian).x + center.x
             let y = pointOnCircumference(radius: radius, radian: radian).y + center.y
