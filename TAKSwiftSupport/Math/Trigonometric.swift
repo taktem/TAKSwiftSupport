@@ -58,3 +58,4 @@ public class Trigonometric: NSObject {
             return CGPointMake(x, y)
     }
 }
+
