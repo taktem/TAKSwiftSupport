@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.default_subspec = 'Core'
-  s.pod_xcconfig     = { 'OTHER_SWIFT_FLAGS' => '-D DEBUG' }
+  s.pod_target_xcconfig     = { 'OTHER_SWIFT_FLAGS' => '-D DEBUG' }
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
