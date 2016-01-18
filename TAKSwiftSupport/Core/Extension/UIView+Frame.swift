@@ -23,7 +23,7 @@ public extension UIView {
     }
     
     func height() -> CGFloat {
-        return CGRectGetWidth(frame)
+        return CGRectGetHeight(frame)
     }
     
     func setHeight(height:CGFloat) {

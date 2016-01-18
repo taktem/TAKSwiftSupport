@@ -44,7 +44,7 @@ public class LoadingView: UIView {
     // 表示時間管理用
     private var showDate = NSDate()
     
-    // ローディングアイコンImageView
+    // Loadin Icon ImageView
     private let loadingImageView = UIImageView()
 
     // MARK: - Singleton
