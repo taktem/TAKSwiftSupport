@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.default_subspec = 'Core'
   s.pod_target_xcconfig = {
-    "OTHER_SWIFT_FLAGS[config=Debug]": "$(inherited) -D COCOAPODS -D DEBUG"
+    "OTHER_SWIFT_FLAGS[config=Debug]" => "$(inherited) -D COCOAPODS -D DEBUG"
   }
 
   s.subspec 'Core' do |ss|

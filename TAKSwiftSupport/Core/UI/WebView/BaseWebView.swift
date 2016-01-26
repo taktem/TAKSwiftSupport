@@ -84,19 +84,11 @@ public class BaseWebView: UIWebView, UIWebViewDelegate {
     
     //MARK: - WEBView Delegate
     public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        var allow = true
-//        if let result = baseWebViewDelegate?.webView?(webView, shouldStartLoadWithRequest: request, navigationType: navigationType) {
-//            allow = result
-//        }
-        
-        allow = !(
-            !allow || // Superクラスで非許可の場合は中断
+        return !(
             isOpenSafari(url: request.URL) || // 外部ブラウザ対象だったら中断
             isPushUrl(url: request.URL) || // Push遷移対象URLだったら中断
             isNeedAction(url: request.URL) // カスタムアクション対象URLだったら中断
         )
-        
-        return allow
     }
     
     public func webViewDidStartLoad(webView: UIWebView) {
