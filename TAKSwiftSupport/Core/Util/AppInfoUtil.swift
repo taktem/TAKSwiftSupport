@@ -9,6 +9,18 @@
 import UIKit
 
 public class AppInfoUtil: NSObject {
+    
+    /**
+     バンドルIDを取得する
+     */
+    public final func bundleIdentifier() -> String {
+        if let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier {
+            return bundleIdentifier
+        } else {
+            return ""
+        }
+    }
+    
     /**
     文字列からクラスを作成する
     
