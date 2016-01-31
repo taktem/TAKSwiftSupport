@@ -26,6 +26,10 @@ public extension UILabel {
         case OptimaRegular = "Optima-Regular"
     }
     
+    final class func font(name fontName: FontName, size: Float) -> UIFont {
+        return UIFont(name: fontName.rawValue, size: CGFloat(size))!
+    }
+    
     /**
      Fill Color
      
@@ -56,7 +60,7 @@ public extension UILabel {
      */
     final class func attributeWithFont(fontName: FontName, size: Float) -> [String: UIFont] {
         return [
-            NSFontAttributeName: UIFont(name: fontName.rawValue, size: CGFloat(size))!
+            NSFontAttributeName: font(name: fontName, size: size)
         ]
     }
     
