@@ -66,28 +66,4 @@ public class ImageUtil: NSObject {
             
             return resultImage
     }
-    
-    /**
-     画像を単色で塗りつぶす
-     
-     - parameter image:     元の画像
-     - parameter color:     塗りつぶし色
-     - parameter blendMode: ブレンドモード
-     */
-    class func fillImage(image image:UIImage, color:UIColor, blendMode:CGBlendMode) -> UIImage {
-        let size = image.size
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        color.setFill()
-        
-        let bounds = CGRectMake(0.0, 0.0, size.width, size.height)
-        UIRectFill(bounds)
-        
-        image.drawInRect(bounds, blendMode: blendMode, alpha: 1.0)
-        
-        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return resultImage
-    }
 }
