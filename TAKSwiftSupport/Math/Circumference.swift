@@ -7,6 +7,26 @@
 
 import UIKit
 
+public extension Double {
+    /**
+     度数法表記を弧度法表記に変換
+     
+     - returns: ラジアン
+     */
+    func toRadian() -> Double {
+        return self * M_PI / 180.0
+    }
+    
+    /**
+     弧度法表記を度数法表記に変換
+     
+     - returns: 角度
+     */
+    func toAngle() -> Double {
+        return self * 180.0 / M_PI
+    }
+}
+
 public class Circumference: NSObject {
     
     /**
