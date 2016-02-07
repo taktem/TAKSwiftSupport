@@ -37,7 +37,7 @@ public func + (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
 
-func += (inout left: CGPoint, right: CGPoint) {
+public func += (inout left: CGPoint, right: CGPoint) {
     left = left + right
 }
 
@@ -45,7 +45,7 @@ public func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x - right.x, y: left.y - right.y)
 }
 
-func -= (inout left: CGPoint, right: CGPoint) {
+public func -= (inout left: CGPoint, right: CGPoint) {
     left = left - right
 }
 
@@ -53,7 +53,7 @@ public func * (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x * right.x, y: left.y * right.y)
 }
 
-func *= (inout left: CGPoint, right: CGPoint) {
+public func *= (inout left: CGPoint, right: CGPoint) {
     left = left * right
 }
 
@@ -61,7 +61,7 @@ public func * (left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x * right, y: left.y * right)
 }
 
-func *= (inout left: CGPoint, right: CGFloat) {
+public func *= (inout left: CGPoint, right: CGFloat) {
     left = left * right
 }
 
@@ -69,7 +69,7 @@ public func / (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x / right.x, y: left.y / right.y)
 }
 
-func /= (inout left: CGPoint, right: CGPoint) {
+public func /= (inout left: CGPoint, right: CGPoint) {
     left = left / right
 }
 
@@ -77,7 +77,7 @@ public func / (left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x / right, y: left.y / right)
 }
 
-func /= (inout left: CGPoint, right: CGFloat) {
+public func /= (inout left: CGPoint, right: CGFloat) {
     left = left / right
 }
 
