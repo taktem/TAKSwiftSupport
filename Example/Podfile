@@ -6,9 +6,9 @@ use_frameworks!
 pod 'Alamofire', '~> 3.1.1'
 
 # Rx
-pod 'RxSwift', '~> 2.0.0'
-pod 'RxCocoa', '~> 2.0.0'
-pod 'RxBlocking', '~> 2.0.0'
+pod 'RxSwift', '~> 2.1.0'
+pod 'RxCocoa', '~> 2.1.0'
+pod 'RxBlocking', '~> 2.1.0'
 
 # Map
 pod 'ObjectMapper', '~> 1.0'

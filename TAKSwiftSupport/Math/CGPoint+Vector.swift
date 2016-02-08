@@ -12,23 +12,23 @@ import UIKit
 public extension CGPoint {
     var length: CGFloat {
         get {
-            return sqrt(self.x * self.x + self.y * self.y)
+            return sqrt(x * x + y * y)
         }
     }
     
     var unit: CGPoint {
         get {
-            return self * (1.0 / self.length)
+            return self * (1.0 / length)
         }
     }
     
     var angle: CGFloat {
         get {
-            if min(fabs(self.x), fabs(self.y)) <= 0 {
+            if min(fabs(x), fabs(y)) <= 0 {
                 return CGFloat(0.0)
             }
             
-            return (self.x + self.y) / (self.x * self.y)
+            return (x + y) / (x * y)
         }
     }
 }

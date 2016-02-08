@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.6"
+  s.version      = "0.5"
   s.summary      = "Swift Handler"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -21,11 +21,10 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
     ss.dependency 'Alamofire', '~> 3.1.1'
-    ss.dependency 'RxSwift', '~> 2.0.0'
-    ss.dependency 'RxCocoa', '~> 2.0.0'
-    ss.dependency 'RxBlocking', '~> 2.0.0'
+    ss.dependency 'RxSwift', '~> 2.1.0'
+    ss.dependency 'RxCocoa', '~> 2.1.0'
+    ss.dependency 'RxBlocking', '~> 2.1.0'
     ss.dependency 'ObjectMapper', '~> 1.0'
-    # ss.prepare_command = 'ruby TAKSwiftSupport/Core/Script/setting.rb'
   end
 
   s.subspec 'CoreMotion' do |ss|
