@@ -36,12 +36,12 @@
 		F40E34381C68260D00FE135B /* ShareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34121C68260D00FE135B /* ShareUtil.swift */; };
 		F40E34391C68260D00FE135B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34141C68260D00FE135B /* LocationManager.swift */; };
 		F40E343A1C68260D00FE135B /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34161C68260D00FE135B /* MotionManager.swift */; };
-		F40E343B1C68260D00FE135B /* CGPoint+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34181C68260D00FE135B /* CGPoint+Vector.swift */; };
-		F40E343C1C68260D00FE135B /* Circumference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34191C68260D00FE135B /* Circumference.swift */; };
-		F40E343D1C68260D00FE135B /* Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E341A1C68260D00FE135B /* Compare.swift */; };
-		F40E343E1C68260D00FE135B /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E341B1C68260D00FE135B /* Easing.swift */; };
 		F40E343F1C68260D00FE135B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E341D1C68260D00FE135B /* RealmManager.swift */; };
 		F40E34401C68260D00FE135B /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E341E1C68260D00FE135B /* RealmObject.swift */; };
+		F40E34461C68317600FE135B /* CGPoint+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34421C68317600FE135B /* CGPoint+Vector.swift */; };
+		F40E34471C68317600FE135B /* Circumference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34431C68317600FE135B /* Circumference.swift */; };
+		F40E34481C68317600FE135B /* Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34441C68317600FE135B /* Compare.swift */; };
+		F40E34491C68317600FE135B /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E34451C68317600FE135B /* Easing.swift */; };
 		F43FBD471C1D0DEB0031825F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43FBD461C1D0DEB0031825F /* CoreLocation.framework */; };
 		F43FBD491C1D0DEF0031825F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43FBD481C1D0DEF0031825F /* CoreMotion.framework */; };
 		F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F960A01BAD90EC00D48AF1 /* AppDelegate.swift */; };
@@ -83,12 +83,12 @@
 		F40E34121C68260D00FE135B /* ShareUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareUtil.swift; sourceTree = "<group>"; };
 		F40E34141C68260D00FE135B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F40E34161C68260D00FE135B /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
-		F40E34181C68260D00FE135B /* CGPoint+Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Vector.swift"; sourceTree = "<group>"; };
-		F40E34191C68260D00FE135B /* Circumference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circumference.swift; sourceTree = "<group>"; };
-		F40E341A1C68260D00FE135B /* Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compare.swift; sourceTree = "<group>"; };
-		F40E341B1C68260D00FE135B /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		F40E341D1C68260D00FE135B /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		F40E341E1C68260D00FE135B /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		F40E34421C68317600FE135B /* CGPoint+Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Vector.swift"; sourceTree = "<group>"; };
+		F40E34431C68317600FE135B /* Circumference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circumference.swift; sourceTree = "<group>"; };
+		F40E34441C68317600FE135B /* Compare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compare.swift; sourceTree = "<group>"; };
+		F40E34451C68317600FE135B /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		F43FBD461C1D0DEB0031825F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F43FBD481C1D0DEF0031825F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		F4F9609D1BAD90EC00D48AF1 /* TAKSwiftSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAKSwiftSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,17 +262,6 @@
 			path = CoreMotion;
 			sourceTree = "<group>";
 		};
-		F40E34171C68260D00FE135B /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				F40E34181C68260D00FE135B /* CGPoint+Vector.swift */,
-				F40E34191C68260D00FE135B /* Circumference.swift */,
-				F40E341A1C68260D00FE135B /* Compare.swift */,
-				F40E341B1C68260D00FE135B /* Easing.swift */,
-			);
-			path = Math;
-			sourceTree = "<group>";
-		};
 		F40E341C1C68260D00FE135B /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,13 +271,24 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		F40E34411C68317600FE135B /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				F40E34421C68317600FE135B /* CGPoint+Vector.swift */,
+				F40E34431C68317600FE135B /* Circumference.swift */,
+				F40E34441C68317600FE135B /* Compare.swift */,
+				F40E34451C68317600FE135B /* Easing.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		F461B41B1C27896E00DB4155 /* TAKSwiftSupport */ = {
 			isa = PBXGroup;
 			children = (
 				F40E33EE1C68260D00FE135B /* Core */,
 				F40E34131C68260D00FE135B /* CoreLocation */,
 				F40E34151C68260D00FE135B /* CoreMotion */,
-				F40E34171C68260D00FE135B /* Math */,
+				F40E34411C68317600FE135B /* Math */,
 				F40E341C1C68260D00FE135B /* Realm */,
 			);
 			name = TAKSwiftSupport;
@@ -455,28 +455,28 @@
 				F40E34331C68260D00FE135B /* Alert.swift in Sources */,
 				F40E34371C68260D00FE135B /* LogUtil.swift in Sources */,
 				F40E342F1C68260D00FE135B /* BaseTableViewCell.swift in Sources */,
+				F40E34471C68317600FE135B /* Circumference.swift in Sources */,
 				F40E34391C68260D00FE135B /* LocationManager.swift in Sources */,
 				F40E34361C68260D00FE135B /* ImageUtil.swift in Sources */,
-				F40E343C1C68260D00FE135B /* Circumference.swift in Sources */,
 				F40E34291C68260D00FE135B /* UIView+Frame.swift in Sources */,
 				F40E342E1C68260D00FE135B /* BaseTableView.swift in Sources */,
 				F40E343F1C68260D00FE135B /* RealmManager.swift in Sources */,
-				F40E343D1C68260D00FE135B /* Compare.swift in Sources */,
 				F40E342D1C68260D00FE135B /* LoadingView.swift in Sources */,
+				F40E34491C68317600FE135B /* Easing.swift in Sources */,
 				F40E34301C68260D00FE135B /* AlphaMaskView.swift in Sources */,
 				F40E34221C68260D00FE135B /* String+Appending.swift in Sources */,
 				F40E34211C68260D00FE135B /* NSURL+Query.swift in Sources */,
 				F40E342A1C68260D00FE135B /* RequestBase.swift in Sources */,
 				F40E341F1C68260D00FE135B /* NSError+Custom.swift in Sources */,
+				F40E34461C68317600FE135B /* CGPoint+Vector.swift in Sources */,
 				F40E34401C68260D00FE135B /* RealmObject.swift in Sources */,
-				F40E343B1C68260D00FE135B /* CGPoint+Vector.swift in Sources */,
+				F40E34481C68317600FE135B /* Compare.swift in Sources */,
 				F40E34271C68260D00FE135B /* UIImage+Filter.swift in Sources */,
 				F4F960A31BAD90EC00D48AF1 /* ExampleViewController.swift in Sources */,
 				F40E34261C68260D00FE135B /* UIImage+Blend.swift in Sources */,
 				F40E342B1C68260D00FE135B /* Responsible.swift in Sources */,
 				F4F960A11BAD90EC00D48AF1 /* AppDelegate.swift in Sources */,
 				F40E342C1C68260D00FE135B /* BaseViewController.swift in Sources */,
-				F40E343E1C68260D00FE135B /* Easing.swift in Sources */,
 				F40E34311C68260D00FE135B /* BaseView.swift in Sources */,
 				F40E34241C68260D00FE135B /* String+Validation.swift in Sources */,
 				F40E34321C68260D00FE135B /* BaseWebView.swift in Sources */,
@@ -526,6 +526,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -572,7 +573,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -598,6 +600,7 @@
 			baseConfigurationReference = 7E086E1C9FB8A68F05184D16 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TAKSwiftSupport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
@@ -611,6 +614,8 @@
 			baseConfigurationReference = 3A7F27CC610C7CD6398158BE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = TAKSwiftSupport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
