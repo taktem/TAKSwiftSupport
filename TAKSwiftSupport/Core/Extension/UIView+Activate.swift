@@ -1,5 +1,5 @@
 //
-//  BaseView.swift
+//  UIView+Activate.swift
 //  TAKSwiftSupport
 //
 //  Created by 西村 拓 on 2015/09/19.
@@ -9,8 +9,9 @@
 import UIKit
 
 public class BaseView: UIView {
+    @available(*, deprecated=8.0, renamed="showOnWindow()")
     public class func show() {
-        guard let view = self.view() else {
+        guard let view = self.create() else {
             return
         }
         
@@ -20,12 +21,25 @@ public class BaseView: UIView {
 }
 
 public extension UIView {
+    
+    /**
+     Windowに表示
+     */
+    public class func showOnWindow() {
+        guard let view = self.create() else {
+            return
+        }
+        
+        let window:UIWindow = UIApplication.sharedApplication().keyWindow!
+        window.rootViewController?.view .addSubview(view)
+    }
+    
     /**
      クラス名と同名のxibファイルからUIViewを生成
      
      - returns: UIView
      */
-    public class func view() -> UIView? {
+    public class func create() -> UIView? {
         let className = NSStringFromClass(self).componentsSeparatedByString(".").last! as String
         let nib = UINib(nibName: className, bundle: NSBundle.mainBundle())
         let objects = nib.instantiateWithOwner(nil, options: nil)

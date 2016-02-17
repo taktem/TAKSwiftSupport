@@ -28,7 +28,7 @@ public extension CGPoint {
                 return CGFloat(0.0)
             }
             
-            return (x + y) / (x * y)
+            return CGFloat(Double(atan(y / x)).toAngle())
         }
     }
 }

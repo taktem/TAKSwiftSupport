@@ -44,8 +44,7 @@ class AlphaMaskView: BaseView {
         mask.locations = [
             0.0,
             threshold1,
-            threshold2,
-            1.0
+            threshold2
         ]
         
         let min = isHorizontal ? CGPointMake(0.0, 0.5) : CGPointMake(0.5, 0.0)

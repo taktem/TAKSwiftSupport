@@ -10,6 +10,7 @@ import UIKit
 
 public class AppInfoUtil: NSObject {
     
+    
     /**
      バンドルIDを取得する
      */
@@ -61,5 +62,23 @@ public class AppInfoUtil: NSObject {
             return className
         }
         return nil
+    }
+    
+    /**
+     実行中のデバイスを取得
+     */
+    public class func deviceType() -> DeviceType {
+        var size : Int = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](count: Int(size), repeatedValue: 0)
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        
+        if let
+            deviceName = String.fromCString(machine),
+            deviceType = DeviceType(rawValue: deviceName) {
+                return deviceType
+        } else {
+            return .UnKnown
+        }
     }
 }
