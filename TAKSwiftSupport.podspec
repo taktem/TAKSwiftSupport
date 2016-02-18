@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
-    ss.dependency 'Alamofire', '~> 3.1.1'
+    ss.dependency 'Alamofire', '~> 3.1.5'
     ss.dependency 'RxSwift', '~> 2.1.0'
     ss.dependency 'RxCocoa', '~> 2.1.0'
     ss.dependency 'RxBlocking', '~> 2.1.0'
-    ss.dependency 'ObjectMapper', '~> 1.0'
+    ss.dependency 'ObjectMapper', '~> 1.1'
   end
 
   s.subspec 'CoreMotion' do |ss|

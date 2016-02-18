@@ -9,6 +9,22 @@
 import UIKit
 
 /**
+ モニターサイズ区分
+ */
+public enum DeviceMonitorType {
+    case UnKnown
+    case iPhone4
+    case iPhone5
+    case iPhone6
+    case iPhone6Plus
+    case iPad
+    case iPadMini
+    case iPadPro
+    case iPodTouch
+    case iPodTouchLarge
+}
+
+/**
  デバイス名
  */
 public enum DeviceType: String {
@@ -56,7 +72,7 @@ public enum DeviceType: String {
     /**
      機種名詳細
      */
-    func name() -> String {
+    public func name() -> String {
         switch self {
         case UnKnown: return ""
         case iPhone4_1: return "iPhone 4S"
@@ -98,6 +114,54 @@ public enum DeviceType: String {
         case iPod3_1: return "iPod touch (3rd gen)"
         case iPod4_1: return "iPod touch (4th gen)"
         case iPod5_1: return "iPod touch (5th gen)"
+        }
+    }
+    
+    /**
+     *  モニターサイズタイプ
+     */
+    public func monitorSizeInch() -> Double {
+        switch self {
+        case UnKnown:
+            return 0.0
+        case iPhone4_1, iPod1_1, iPod2_1, iPod3_1, iPod4_1:
+            return 3.5
+        case iPhone5_1, iPhone5_2, iPhone5_3, iPhone5_4, iPhone6_1, iPhone6_2, iPod5_1:
+            return 4.0
+        case iPhone7_2:
+            return 4.7
+        case iPhone7_1:
+            return 5.5
+        case iPad1_1, iPad2_1, iPad2_2, iPad2_3, iPad2_4, iPad3_1, iPad3_2, iPad3_3, iPad3_4, iPad3_5, iPad3_6, iPad4_1, iPad4_2, iPad4_3, iPad5_3, iPad5_4:
+            return 9.7
+        case iPad2_5, iPad2_6, iPad2_7, iPad4_4, iPad4_5, iPad4_6, iPad4_7, iPad4_8, iPad4_9:
+            return 7.9
+        }
+    }
+    
+    /**
+     モニターサイズ基準取得
+     */
+    public func deviceName() -> DeviceMonitorType {
+        switch self {
+        case UnKnown:
+            return .UnKnown
+        case iPhone4_1:
+            return .iPhone4
+        case iPhone5_1, iPhone5_2, iPhone5_3, iPhone5_4, iPhone6_1, .iPhone6_2:
+            return .iPhone5
+        case iPhone7_2:
+            return .iPhone6
+        case iPhone7_1:
+            return .iPhone6Plus
+        case iPad1_1, iPad2_1, iPad2_2, iPad2_3, iPad2_4, iPad3_1, iPad3_2, iPad3_3, iPad3_4, iPad3_5, iPad3_6, iPad4_1, iPad4_2, iPad4_3, iPad5_3, iPad5_4:
+            return .iPad
+        case iPad2_5, iPad2_6, iPad2_7, iPad4_4, iPad4_5, iPad4_6, iPad4_7, iPad4_8, iPad4_9:
+            return .iPadMini
+        case iPod1_1, iPod2_1, iPod3_1, iPod4_1:
+            return .iPodTouch
+        case iPod5_1:
+            return .iPodTouchLarge
         }
     }
 }
