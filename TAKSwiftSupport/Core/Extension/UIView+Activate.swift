@@ -8,18 +8,6 @@
 
 import UIKit
 
-public class BaseView: UIView {
-    @available(*, deprecated=8.0, renamed="showOnWindow()")
-    public class func show() {
-        guard let view = self.create() else {
-            return
-        }
-        
-        let window:UIWindow = UIApplication.sharedApplication().keyWindow!
-        window.rootViewController?.view .addSubview(view)
-    }
-}
-
 public extension UIView {
     
     /**
