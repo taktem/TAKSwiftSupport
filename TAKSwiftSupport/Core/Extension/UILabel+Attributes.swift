@@ -35,7 +35,7 @@ public extension UILabel {
      
      - parameter color: Fill Color
      */
-    final class func attributeWithColor(color color: UIColor) -> [String: UIColor] {
+    final class func attributeWithColor(color color: UIColor) -> [String: AnyObject] {
         return [NSForegroundColorAttributeName: color]
     }
     
@@ -58,7 +58,7 @@ public extension UILabel {
      - parameter fontName: enum FontName
      - parameter size:     font size
      */
-    final class func attributeWithFont(fontName: FontName, size: Float) -> [String: UIFont] {
+    final class func attributeWithFont(fontName: FontName, size: Float) -> [String: AnyObject] {
         return [
             NSFontAttributeName: font(name: fontName, size: size)
         ]
@@ -69,7 +69,7 @@ public extension UILabel {
      
      - parameter lineHeight: Line Height
      */
-    final class func attributeWithLineHeight(lineHeight: Float) -> [String: NSParagraphStyle] {
+    final class func attributeWithLineHeight(lineHeight: Float) -> [String: AnyObject] {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.minimumLineHeight = CGFloat(lineHeight);
         paragraphStyle.maximumLineHeight = CGFloat(lineHeight);
@@ -82,7 +82,7 @@ public extension UILabel {
      
      - parameter em: Letter Spacing
      */
-    final class func attributeWithKerning(em: Float) -> [String: Float] {
+    final class func attributeWithKerning(em: Float) -> [String: AnyObject] {
         return [
             NSKernAttributeName: em
         ]
