@@ -8,11 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.6"
-  s.summary      = "Swift Handler"
+  s.version      = "0.6.2"
+  s.summary      = "Swift Support Project"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
-  s.author       = { "SOMTD" => "nishimura[at]taktem.com" }
+  s.author       = { "taktem" => "nishimura[at]taktem.com" }
   s.source       = { :git => "https://github.com/taktem/TAKSwiftSupport.git", :tag => "#{s.version}" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
   s.subspec 'Realm' do |ss|
     ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
-    ss.dependency 'RealmSwift', '~> 0.96'
+    ss.dependency 'RealmSwift', '~> 0.97.0'
   end
 
   s.subspec 'CoreLocation' do |ss|

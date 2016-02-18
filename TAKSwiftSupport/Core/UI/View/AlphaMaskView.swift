@@ -9,7 +9,7 @@
 import UIKit
 
 /// アルファマスク設定用View
-class AlphaMaskView: BaseView {
+class AlphaMaskView: UIView {
     
     /// マスク境界位置調整
     @IBInspectable var threshold1: CGFloat = 0.0
