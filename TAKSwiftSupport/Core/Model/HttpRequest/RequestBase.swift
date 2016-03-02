@@ -20,6 +20,7 @@ public enum Method: String {
 
 /// APiリクエストのベースとなるクラス
 public class RequestBase: NSObject {
+    
     /// Rx
     public let requestDisposeBag = DisposeBag()
     
@@ -38,7 +39,7 @@ public class RequestBase: NSObject {
      - parameter parameters: クエリ
      - parameter encording:  リクエストエンコードタイプ
      */
-    public func createRequest(
+    public final func createRequest(
         hostName hostName: String,
         path: String,
         method: Method,
@@ -65,29 +66,26 @@ public class RequestBase: NSObject {
      
      - returns: <T: Responsible>
      */
-    final public func requestJsonDictionary<T: Responsible>(
+    public final func requestJson<T: Responsible>(
         ) -> Observable<T> {
-            let source: Observable<T> = Observable.create { (observer: AnyObserver<T>) in
-                self.request?.responseJSON { response in
-                    switch response.result {
-                    case .Success(let value):
-                        if let mapper = Mapper<T>().map(value) {
+            let source: Observable<T> = Observable.create {
+                [weak self] (observer: AnyObserver<T>) in
+                
+                self?.request?.responseData { [weak self] response in
+                    if let
+                        jsonString = self?.mappingJson(response: response),
+                        mapper = Mapper<T>().map(jsonString) {
                             observer.onNext(mapper)
                             observer.onCompleted()
-                            DLog("\(self.request?.request?.URL):Result = \(value)")
-                        } else {
-                            observer.onCompleted()
-                        }
-                        
-                    case .Failure(let error):
-                        DLog("\(self.request?.request?.URL):Error = " + error.localizedDescription)
-                        observer.on(.Error(error))
+                            DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
+                    } else {
+                        let error = NSError(errorType: .JsonMappingError)
+                        observer.onError(error)
+                        DLog("\(error.localizedDescription)")
                     }
                 }
                 
-                return AnonymousDisposable {
-                    
-                }
+                return AnonymousDisposable { }
             }
             
             return source
@@ -98,31 +96,67 @@ public class RequestBase: NSObject {
      
      - returns: <T: [Responsible]>
      */
-    final public func requestJsonArray<T: Responsible>(
+    public final func requestJson<T: Responsible>(
         ) -> Observable<[T]> {
-            let source: Observable<[T]> = Observable.create { (observer: AnyObserver<[T]>) in
-                self.request?.responseJSON { response in
-                    switch response.result {
-                    case .Success(let value):
-                        if let mapper = Mapper<T>().mapArray(value) {
-                            observer.onNext(mapper)
-                            observer.onCompleted()
-                            DLog("\(self.request?.request?.URL):Result = \(value)")
+            let source: Observable<[T]> = Observable.create {
+                [weak self] (observer: AnyObserver<[T]>) in
+                
+                self?.request?.responseData { [weak self] response in
+                    
+                    self?.request?.responseData { [weak self] response in
+                        if let
+                            jsonString = self?.mappingJson(response: response),
+                            mapper = Mapper<T>().mapArray(jsonString) {
+                                observer.onNext(mapper)
+                                observer.onCompleted()
+                                DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
                         } else {
-                            observer.onCompleted()
+                            let error = NSError(errorType: .JsonMappingError)
+                            observer.onError(error)
+                            DLog("\(error.localizedDescription)")
                         }
-                        
-                    case .Failure(let error):
-                        DLog("\(self.request?.request?.URL):Error = " + error.localizedDescription)
-                        observer.on(.Error(error))
                     }
                 }
                 
-                return AnonymousDisposable {
-                    
-                }
+                return AnonymousDisposable { }
             }
             
             return source
+    }
+    
+    //MARK: - Util
+    /**
+     レスポンスオブジェクトからJson文字列へマッピングする
+     */
+    private final func mappingJson(response response: Response<NSData, NSError>?) -> String? {
+
+        // 入力値がない場合
+        guard let response = response else { return nil }
+        
+        switch response.result {
+        case .Success(let value):
+            if let jsonString = self.jsonString(value) {
+                return jsonString
+            }
+        default: break
+        }
+        
+        return nil
+    }
+    
+    /**
+     NSDataをJson文字列化
+     */
+    private final func jsonString(data: NSData) -> String? {
+        var buffer = [UInt8](count:data.length, repeatedValue:0)
+        data.getBytes(&buffer, length:data.length)
+        
+        if let jsonString = String(bytes:buffer, encoding:NSJapaneseEUCStringEncoding) {
+            return jsonString
+        } else if let jsonString = String(bytes:buffer, encoding:NSUTF8StringEncoding) {
+            return jsonString
+        }
+        
+        return nil
     }
 }
