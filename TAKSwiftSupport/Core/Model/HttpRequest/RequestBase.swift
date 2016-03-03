@@ -102,19 +102,16 @@ public class RequestBase: NSObject {
                 [weak self] (observer: AnyObserver<[T]>) in
                 
                 self?.request?.responseData { [weak self] response in
-                    
-                    self?.request?.responseData { [weak self] response in
-                        if let
-                            jsonString = self?.mappingJson(response: response),
-                            mapper = Mapper<T>().mapArray(jsonString) {
-                                observer.onNext(mapper)
-                                observer.onCompleted()
-                                DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
-                        } else {
-                            let error = NSError(errorType: .JsonMappingError)
-                            observer.onError(error)
-                            DLog("\(error.localizedDescription)")
-                        }
+                    if let
+                        jsonString = self?.mappingJson(response: response),
+                        mapper = Mapper<T>().mapArray(jsonString) {
+                            observer.onNext(mapper)
+                            observer.onCompleted()
+                            DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
+                    } else {
+                        let error = NSError(errorType: .JsonMappingError)
+                        observer.onError(error)
+                        DLog("\(error.localizedDescription)")
                     }
                 }
                 
