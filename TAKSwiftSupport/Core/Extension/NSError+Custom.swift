@@ -15,7 +15,10 @@ public extension NSError {
         case Unknown = -1
         
         // Network
-        case JsonMappingError = -999
+        
+        // Mapper
+        case JsonMappingError = -3999
+        case ModelMappingError = -3998
         
         func localizedDescription() -> String {
             switch self {
@@ -23,7 +26,10 @@ public extension NSError {
                 return "Unknown Error"
                 
             case .JsonMappingError:
-                return "Unable to convert data to string"
+                return "Unable to convert data to string."
+                
+            case .ModelMappingError:
+                return "Unable to mapping data to model."
             }
         }
     }
