@@ -10,29 +10,31 @@ import UIKit
 
 public class LoadingView: UIView {
     
-    // 指定基準がない場合のローティングアイコンサイズ
+    // Default loading icon size
     private let DEFAULT_IMAGE_SIZE = CGSizeMake(40.0, 40.0)
     
-    // 最低ローディング表示時間
+    // Minimum loading time
     private let MIN_SHOW_LOADING_TIME = 0.4
     
     // Window
     private let loadingWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
     
-    // ローディングイメージ
+    // LoadingImage
     var loadingImage: UIImage? {
         didSet {
             loadingImageView.image = loadingImage
             
             if let size = imageSize {
                 loadingImageView.frame.size = size
-            } else if let size = imageSize {
-                loadingImageView.frame.size = size
+            } else {
+                loadingImageView.frame.size = DEFAULT_IMAGE_SIZE
             }
         }
     }
     
-    // ローディングアイコンサイズ指定（未指定の場合画像サイズを使用）
+    // Loading animation images
+    
+    // Loading icon size
     var imageSize: CGSize? {
         didSet {
             if let size = imageSize {
@@ -41,7 +43,7 @@ public class LoadingView: UIView {
         }
     }
     
-    // 表示時間管理用
+    // Loading start time
     private var showDate = NSDate()
     
     // Loadin Icon ImageView
@@ -70,6 +72,9 @@ public class LoadingView: UIView {
     }
 
     // MARK: Util
+    /**
+    Set loading icon
+    */
     public class func setLoadingImage(image: UIImage, size: CGSize?) {
         let loadingView = LoadingView.sharedInstance
         
@@ -77,15 +82,36 @@ public class LoadingView: UIView {
         loadingView.imageSize = size
     }
     
-    public class func show() {
+    /**
+     Set loading animation images
+     */
+    public class func setLoadingImage(images: [UIImage], size: CGSize?, duration: NSTimeInterval) {
+        let loadingView = LoadingView.sharedInstance
+        
+        loadingView.loadingImageView.animationImages = images
+        loadingView.loadingImageView.animationDuration = duration
+        if let size = size {
+            loadingView.loadingImageView.frame.size = size
+        }
+    }
+    
+    /**
+    Start loading
+    */
+    public  class func show() {
         let loadingView = LoadingView.sharedInstance
         loadingView.frame = UIScreen.mainScreen().bounds
         loadingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
         
-        /** 現在時刻を設定 **/
+        // Stock current time
         loadingView.showDate = NSDate()
         
-        loadingView.startRotateAnimation()
+        // Rotate animation or Flip animation
+        if loadingView.loadingImageView.animationImages?.count > 0 {
+            loadingView.loadingImageView.startAnimating()
+        } else {
+            loadingView.startRotateAnimation()
+        }
         
         loadingView.loadingWindow.backgroundColor = UIColor.clearColor()
         loadingView.loadingWindow.windowLevel = UIWindowLevelAlert - 1
@@ -101,6 +127,9 @@ public class LoadingView: UIView {
         })
     }
     
+    /**
+     Stop loading
+     */
     public class func dismiss() {
         let loadingView = LoadingView.sharedInstance
         
@@ -115,8 +144,11 @@ public class LoadingView: UIView {
     }
     
     // MARK: Animation
-    func closeAnimaton() {
-        /** ローディング終了 **/
+    /**
+    Finish loading animation
+    */
+    private final func closeAnimaton() {
+        // Stop loading
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             UIView.animateWithDuration(0.4, animations: {() -> Void in
                 self.alpha = 0.0
@@ -124,14 +156,17 @@ public class LoadingView: UIView {
                     
                     self.removeFromSuperview()
                     
-                    // 制御をアプリケーションメインWindowに戻す
+                    // Back to main window
                     self.loadingWindow.windowLevel = -1000.0
                     UIApplication.sharedApplication().delegate?.window??.makeKeyAndVisible()
             })
         })
     }
     
-    private func startRotateAnimation() {
+    /**
+     Start rotate animation
+     */
+    private final func startRotateAnimation() {
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.duration = 1.0
         animation.repeatCount = Float.infinity
