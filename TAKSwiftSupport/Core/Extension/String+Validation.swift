@@ -70,8 +70,19 @@ public extension String {
      
      :returns: バリデーションが通ればtrue
      */
-    func validationAlphanumeric() -> Bool {
+    func isAlphanumeric() -> Bool {
         return checkRegularExpression(pattern: "[a-zA-Z0-9]+")
+    }
+    
+    /**
+     半角数字チェック
+     
+     :param: string 対象文字列
+     
+     :returns: バリデーションが通ればtrue
+     */
+    func isNumeric() -> Bool {
+        return checkRegularExpression(pattern: "[0-9]+")
     }
     
     
