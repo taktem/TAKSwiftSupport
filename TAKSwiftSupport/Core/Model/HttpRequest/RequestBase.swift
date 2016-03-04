@@ -68,20 +68,20 @@ public class RequestBase: NSObject {
      */
     public final func requestJson<T: Responsible>(
         ) -> Observable<T> {
+            
             let source: Observable<T> = Observable.create {
                 [weak self] (observer: AnyObserver<T>) in
                 
-                self?.request?.responseData { [weak self] response in
-                    if let
-                        jsonString = self?.mappingJson(response: response),
-                        mapper = Mapper<T>().map(jsonString) {
-                            observer.onNext(mapper)
-                            observer.onCompleted()
-                            DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
+                let _ = self?.responseJson()
+                    .subscribeNext{ jsonString in
+                    if let mapper = Mapper<T>().map(jsonString) {
+                        observer.onNext(mapper)
+                        observer.onCompleted()
+                        self?.successLog(jsonString)
                     } else {
-                        let error = NSError(errorType: .JsonMappingError)
+                        let error = NSError(errorType: .ModelMappingError)
                         observer.onError(error)
-                        DLog("\(error.localizedDescription)")
+                        self?.errorLog(error)
                     }
                 }
                 
@@ -91,6 +91,8 @@ public class RequestBase: NSObject {
             return source
     }
     
+    
+    
     /**
      レスポンス形式がルート配列のJsonの場合、Entityを指定してObjectMapperでマッピングまで行う
      
@@ -98,20 +100,20 @@ public class RequestBase: NSObject {
      */
     public final func requestJson<T: Responsible>(
         ) -> Observable<[T]> {
+            
             let source: Observable<[T]> = Observable.create {
                 [weak self] (observer: AnyObserver<[T]>) in
                 
-                self?.request?.responseData { [weak self] response in
-                    if let
-                        jsonString = self?.mappingJson(response: response),
-                        mapper = Mapper<T>().mapArray(jsonString) {
-                            observer.onNext(mapper)
-                            observer.onCompleted()
-                            DLog("\(self?.request?.request?.URL):Result = \(jsonString)")
+                let _ = self?.responseJson()
+                    .subscribeNext{ jsonString in
+                    if let mapper = Mapper<T>().mapArray(jsonString) {
+                        observer.onNext(mapper)
+                        observer.onCompleted()
+                        self?.successLog(jsonString)
                     } else {
-                        let error = NSError(errorType: .JsonMappingError)
+                        let error = NSError(errorType: .ModelMappingError)
                         observer.onError(error)
-                        DLog("\(error.localizedDescription)")
+                        self?.errorLog(error)
                     }
                 }
                 
@@ -123,22 +125,48 @@ public class RequestBase: NSObject {
     
     //MARK: - Util
     /**
+    レスポンスをJsonマッピングする
+    */
+    private final func responseJson() -> Observable<String> {
+        let source: Observable<String> = Observable.create {
+            [weak self] (observer: AnyObserver<String>) in
+            
+            self?.request?.responseData { [weak self] response in
+                let result = self?.mappingJson(response: response)
+                if let jsonString = result?.jsonString {
+                        observer.onNext(jsonString)
+                        observer.onCompleted()
+                } else if let error = result?.error {
+                    observer.onError(error)
+                    self?.errorLog(error)
+                }
+            }
+            
+            return AnonymousDisposable { }
+        }
+        
+        return source
+    }
+    
+    /**
      レスポンスオブジェクトからJson文字列へマッピングする
      */
-    private final func mappingJson(response response: Response<NSData, NSError>?) -> String? {
+    private final func mappingJson(response response: Response<NSData, NSError>?) -> (jsonString: String?, error: NSError?) {
 
         // 入力値がない場合
-        guard let response = response else { return nil }
+        guard let response = response else { return (nil, NSError(errorType: .JsonMappingError)) }
         
         switch response.result {
         case .Success(let value):
             if let jsonString = self.jsonString(value) {
-                return jsonString
+                return (jsonString, nil)
+            } else {
+                return (nil, NSError(errorType: .JsonMappingError))
             }
-        default: break
+            
+        case .Failure(let error):
+            return (nil, error)
         }
-        
-        return nil
     }
     
     /**
@@ -155,5 +183,20 @@ public class RequestBase: NSObject {
         }
         
         return nil
+    }
+    
+    //MARK: - Log
+    /**
+    Success log
+    */
+    private final func successLog(resultMessage: String) {
+        DLog("\(self.request?.request?.URL):Result = \(resultMessage)")
+    }
+    
+    /**
+     Error log
+     */
+    private final func errorLog(error: NSError) {
+        DLog("\(self.request?.request?.URL):Error(\(error.code) = \(error.localizedDescription)")
     }
 }
