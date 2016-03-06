@@ -39,7 +39,7 @@ public extension NSError {
      */
     public convenience init(errorType: CustomErrorType) {
         self.init(
-            domain: AppInfoUtil().bundleIdentifier(),
+            domain: AppInfoUtil.bundleIdentifier(),
             code: errorType.rawValue,
             userInfo: [NSLocalizedDescriptionKey: errorType.localizedDescription()])
     }
@@ -52,7 +52,7 @@ public extension NSError {
      */
     public convenience init(code: Int, localizedDescription: String) {
         self.init(
-            domain: AppInfoUtil().bundleIdentifier(),
+            domain: AppInfoUtil.bundleIdentifier(),
             code: code,
             userInfo: [NSLocalizedDescriptionKey: localizedDescription])
     }

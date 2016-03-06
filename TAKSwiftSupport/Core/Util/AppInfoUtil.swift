@@ -14,7 +14,7 @@ public class AppInfoUtil: NSObject {
     /**
      バンドルIDを取得する
      */
-    public final func bundleIdentifier() -> String {
+    public final class func bundleIdentifier() -> String {
         if let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier {
             return bundleIdentifier
         } else {
@@ -29,7 +29,7 @@ public class AppInfoUtil: NSObject {
     
     - returns: 生成したクラス
     */
-    public class func classFromString(
+    public final class func classFromString(
         className: String) -> AnyClass? {
         let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
             
