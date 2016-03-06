@@ -147,7 +147,7 @@ public class LoadingView: UIView {
     /**
     Finish loading animation
     */
-    private final func closeAnimaton() {
+    final func closeAnimaton() {
         // Stop loading
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             UIView.animateWithDuration(0.4, animations: {() -> Void in
