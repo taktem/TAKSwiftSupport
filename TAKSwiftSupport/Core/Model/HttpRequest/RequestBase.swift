@@ -73,17 +73,21 @@ public class RequestBase: NSObject {
                 [weak self] (observer: AnyObserver<T>) in
                 
                 let _ = self?.responseJson()
-                    .subscribeNext{ jsonString in
-                    if let mapper = Mapper<T>().map(jsonString) {
-                        observer.onNext(mapper)
-                        observer.onCompleted()
-                        self?.successLog(jsonString)
-                    } else {
-                        let error = NSError(errorType: .ModelMappingError)
-                        observer.onError(error)
-                        self?.errorLog(error)
-                    }
-                }
+                    .subscribe(
+                        onNext: { jsonString in
+                            if let mapper = Mapper<T>().map(jsonString) {
+                                observer.onNext(mapper)
+                                observer.onCompleted()
+                                self?.successLog(jsonString)
+                            } else {
+                                let error = NSError(errorType: .ModelMappingError)
+                                observer.onError(error)
+                                self?.errorLog(error)
+                            }
+                        }, onError: { error in
+                            observer.onError(error)
+                        }, onCompleted: { }, onDisposed: { }
+                    )
                 
                 return AnonymousDisposable { }
             }
@@ -105,17 +109,21 @@ public class RequestBase: NSObject {
                 [weak self] (observer: AnyObserver<[T]>) in
                 
                 let _ = self?.responseJson()
-                    .subscribeNext{ jsonString in
-                    if let mapper = Mapper<T>().mapArray(jsonString) {
-                        observer.onNext(mapper)
-                        observer.onCompleted()
-                        self?.successLog(jsonString)
-                    } else {
-                        let error = NSError(errorType: .ModelMappingError)
-                        observer.onError(error)
-                        self?.errorLog(error)
-                    }
-                }
+                    .subscribe(
+                        onNext: { jsonString in
+                            if let mapper = Mapper<T>().mapArray(jsonString) {
+                                observer.onNext(mapper)
+                                observer.onCompleted()
+                                self?.successLog(jsonString)
+                            } else {
+                                let error = NSError(errorType: .ModelMappingError)
+                                observer.onError(error)
+                                self?.errorLog(error)
+                            }
+                        }, onError: { error in
+                            observer.onError(error)
+                        }, onCompleted: { }, onDisposed: { }
+                )
                 
                 return AnonymousDisposable { }
             }
