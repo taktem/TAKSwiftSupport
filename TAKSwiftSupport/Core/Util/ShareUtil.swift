@@ -8,31 +8,51 @@
 
 import UIKit
 
-/// OS標準シェア制御用
+/// UIActivityViewController Control
 public class ShareUtil: NSObject {
     
-    /// シェアActivityViewController
+    // Window
+    private var window: UIWindow?
+    
+    /// ActivityViewController
     private var shareController: UIActivityViewController?
     
     /**
-     URLを指定してシェア
+     Share with URL
      */
     public func shareWithUrl(url: NSURL) -> Self {
         shareController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        shareController?.completionWithItemsHandler = { [ weak self] _ in
+            self?.didComplete()
+        }
         
         return self
     }
     
     /**
-     KeyWindowにシェア表示
+     Show ShareWindow
      */
     public final func show() {
-        guard let
-            window = UIApplication.sharedApplication().keyWindow,
-            shareController = shareController else {
+        
+        guard let shareController = shareController else {
             return
         }
         
-        window.rootViewController?.presentViewController(shareController, animated: true, completion: nil)
+        // Window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.clearColor()
+        window?.windowLevel = UIWindowLevelAlert - 2
+        window?.makeKeyAndVisible()
+        
+        // RootViewController
+        let controller = UIViewController()
+        window?.rootViewController = controller
+        
+        controller.presentViewController(shareController, animated: true, completion: nil)
+    }
+    
+    private final func didComplete() {
+        window?.rootViewController = nil
+        window = nil
     }
 }
