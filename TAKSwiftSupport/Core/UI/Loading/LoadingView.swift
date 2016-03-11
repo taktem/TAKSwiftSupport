@@ -88,8 +88,10 @@ public class LoadingView: UIView {
     public class func setLoadingImage(images: [UIImage], size: CGSize?, duration: NSTimeInterval) {
         let loadingView = LoadingView.sharedInstance
         
+        loadingView.loadingImageView.image = images.first
         loadingView.loadingImageView.animationImages = images
         loadingView.loadingImageView.animationDuration = duration
+        loadingView.loadingImageView.animationRepeatCount = 0
         if let size = size {
             loadingView.loadingImageView.frame.size = size
         }
