@@ -56,9 +56,23 @@ public class RequestBase: NSObject {
                 requestUrl,
                 parameters: parameters,
                 encoding: encording,
-                headers: headers)
+                headers: headers).authenticate(user: "stg", password: "36987412")
             
             return request
+    }
+    
+    /**
+     Add basic authentication
+     
+     - parameter user:     username
+     - parameter password: password
+     */
+    public final func authenticate(user: String?, password: String?) {
+        guard let user = user, password = password else {
+            return
+        }
+        
+        request?.authenticate(user: user, password: password)
     }
     
     /**
