@@ -80,6 +80,7 @@ public class LoadingView: UIView {
         
         loadingView.loadingImage = image
         loadingView.imageSize = size
+        loadingView.loadingImageView.center = loadingView.center
     }
     
     /**
@@ -94,6 +95,7 @@ public class LoadingView: UIView {
         loadingView.loadingImageView.animationRepeatCount = 0
         if let size = size {
             loadingView.loadingImageView.frame.size = size
+            loadingView.loadingImageView.center = loadingView.center
         }
     }
     

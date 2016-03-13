@@ -24,9 +24,20 @@ public class RequestBase: NSObject {
     /// Rx
     public let requestDisposeBag = DisposeBag()
     
-    /// Alamofire本体
-    private let manager = Manager.sharedInstance
+    // Default time out
+    public static var timeoutIntervalForRequest = NSTimeInterval(15.0)
+    public static var timeoutIntervalForResource = NSTimeInterval(20.0)
     
+    /// Alamofire object
+    private static let manager: Manager = {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
+        configuration.timeoutIntervalForRequest = RequestBase.timeoutIntervalForRequest
+        configuration.timeoutIntervalForResource = RequestBase.timeoutIntervalForResource
+        
+        return Manager(configuration: configuration)
+    }()
+
     // Requestオブジェクト
     private var request: Request?
     
@@ -51,12 +62,12 @@ public class RequestBase: NSObject {
                 return request
             }
             
-            request = self.manager.request(
+            request = RequestBase.manager.request(
                 Alamofire.Method(rawValue: method.rawValue)!,
                 requestUrl,
                 parameters: parameters,
                 encoding: encording,
-                headers: headers).authenticate(user: "stg", password: "36987412")
+                headers: headers)
             
             return request
     }
