@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class LoadingView: UIView {
+public final class LoadingView: UIView {
     
     // Default loading icon size
-    private let DEFAULT_IMAGE_SIZE = CGSizeMake(40.0, 40.0)
+    private static let DEFAULT_IMAGE_SIZE = CGSizeMake(40.0, 40.0)
     
     // Minimum loading time
-    private let MIN_SHOW_LOADING_TIME = 0.4
+    private static let MIN_SHOW_LOADING_TIME = 0.4
     
     // Window
-    private let loadingWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+    private var loadingWindow: UIWindow?
     
     // LoadingImage
     var loadingImage: UIImage? {
@@ -27,7 +27,7 @@ public class LoadingView: UIView {
             if let size = imageSize {
                 loadingImageView.frame.size = size
             } else {
-                loadingImageView.frame.size = DEFAULT_IMAGE_SIZE
+                loadingImageView.frame.size = LoadingView.DEFAULT_IMAGE_SIZE
             }
         }
     }
@@ -64,7 +64,7 @@ public class LoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.mainScreen().bounds)
         
-        loadingImageView.frame.size = DEFAULT_IMAGE_SIZE
+        loadingImageView.frame.size = LoadingView.DEFAULT_IMAGE_SIZE
         loadingImageView.center = self.center
         loadingImageView.backgroundColor = UIColor.clearColor()
         
@@ -102,29 +102,31 @@ public class LoadingView: UIView {
     /**
     Start loading
     */
-    public  class func show() {
-        let loadingView = LoadingView.sharedInstance
-        loadingView.frame = UIScreen.mainScreen().bounds
-        loadingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+    public final class func show() {
         
-        // Stock current time
-        loadingView.showDate = NSDate()
-        
-        // Rotate animation or Flip animation
-        if loadingView.loadingImageView.animationImages?.count > 0 {
-            loadingView.loadingImageView.startAnimating()
-        } else {
-            loadingView.startRotateAnimation()
-        }
-        
-        loadingView.loadingWindow.backgroundColor = UIColor.clearColor()
-        loadingView.loadingWindow.windowLevel = UIWindowLevelAlert - 1
-        loadingView.loadingWindow.makeKeyAndVisible()
-        
-        loadingView.loadingWindow.addSubview(loadingView)
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            UIView.animateWithDuration(0.3, animations: {() -> Void in
+        dispatch_async(dispatch_get_main_queue(), {
+            let loadingView = LoadingView.sharedInstance
+            loadingView.frame = UIScreen.mainScreen().bounds
+            loadingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
+            
+            // Stock current time
+            loadingView.showDate = NSDate()
+            
+            // Rotate animation or Flip animation
+            if loadingView.loadingImageView.animationImages?.count > 0 {
+                loadingView.loadingImageView.startAnimating()
+            } else {
+                loadingView.startRotateAnimation()
+            }
+            
+            loadingView.loadingWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+            loadingView.loadingWindow?.backgroundColor = UIColor.clearColor()
+            loadingView.loadingWindow?.windowLevel = UIWindowLevelAlert - 1
+            
+            loadingView.loadingWindow?.makeKeyAndVisible()
+            loadingView.loadingWindow?.addSubview(loadingView)
+            
+            UIView.animateWithDuration(0.3, animations: { _ in
                 }, completion: {(Bool) -> Void in
                     loadingView.alpha = 1.0
             })
@@ -134,14 +136,14 @@ public class LoadingView: UIView {
     /**
      Stop loading
      */
-    public class func dismiss() {
+    public final class func dismiss() {
         let loadingView = LoadingView.sharedInstance
         
         var delayTime = 0.0;
         
         let elaspedTime = NSDate().timeIntervalSinceDate(loadingView.showDate);
         if (elaspedTime<1.5) {
-            delayTime = loadingView.MIN_SHOW_LOADING_TIME - elaspedTime;
+            delayTime = LoadingView.MIN_SHOW_LOADING_TIME - elaspedTime;
         }
         
         loadingView.performSelector(Selector("closeAnimaton"), withObject: nil, afterDelay: delayTime)
@@ -153,15 +155,15 @@ public class LoadingView: UIView {
     */
     final func closeAnimaton() {
         // Stop loading
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            UIView.animateWithDuration(0.4, animations: {() -> Void in
+        dispatch_async(dispatch_get_main_queue(), {
+            UIView.animateWithDuration(0.4, animations: {
                 self.alpha = 0.0
-                }, completion: {(Bool) -> Void in
-                    
+                }, completion: { _ in
                     self.removeFromSuperview()
                     
                     // Back to main window
-                    self.loadingWindow.windowLevel = -1000.0
+                    self.loadingWindow?.windowLevel = -1000.0
+                    self.loadingWindow = nil
                     UIApplication.sharedApplication().delegate?.window??.makeKeyAndVisible()
             })
         })

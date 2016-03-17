@@ -17,6 +17,8 @@ public enum DeviceMonitorType {
     case iPhone5
     case iPhone6
     case iPhone6Plus
+    case iPhone6S
+    case iPhone6SPlus
     case iPad
     case iPadMini
     case iPadPro
@@ -38,6 +40,8 @@ public enum DeviceType: String {
     case iPhone6_2  = "iPhone6,2"
     case iPhone7_1  = "iPhone7,1"
     case iPhone7_2  = "iPhone7,2"
+    case iPhone8_1  = "iPhone8,1"
+    case iPhone8_2  = "iPhone8,2"
     case iPad1_1    = "iPad1,1"
     case iPad2_1    = "iPad2,1"
     case iPad2_2    = "iPad2,2"
@@ -63,6 +67,7 @@ public enum DeviceType: String {
     case iPad4_9    = "iPad4,9"
     case iPad5_3    = "iPad5,3"
     case iPad5_4    = "iPad5,4"
+    case iPad6_8    = "iPad6,8"
     case iPod1_1    = "iPod1,1"
     case iPod2_1    = "iPod2,1"
     case iPod3_1    = "iPod3,1"
@@ -84,6 +89,8 @@ public enum DeviceType: String {
         case iPhone6_2: return "iPhone 5s (A1457/A1518/A1530)"
         case iPhone7_1: return "iPhone 6 Plus"
         case iPhone7_2: return "iPhone 6"
+        case iPhone8_1: return "iPhone 6S"
+        case iPhone8_2: return "iPhone 6S Plus"
         case iPad1_1: return "iPad"
         case iPad2_1: return "iPad 2 (Wi-Fi)"
         case iPad2_2: return "iPad 2 (GSM)"
@@ -109,6 +116,7 @@ public enum DeviceType: String {
         case iPad4_9: return "iPad mini 3 (A1601)"
         case iPad5_3: return "iPad Air 2 (Wi-Fi)"
         case iPad5_4: return "iPad Air 2 (Wi-Fi+LTE)"
+        case iPad6_8: return "iPad Pro"
         case iPod1_1: return "iPod touch"
         case iPod2_1: return "iPod touch (2nd gen)"
         case iPod3_1: return "iPod touch (3rd gen)"
@@ -128,14 +136,16 @@ public enum DeviceType: String {
             return 3.5
         case iPhone5_1, iPhone5_2, iPhone5_3, iPhone5_4, iPhone6_1, iPhone6_2, iPod5_1:
             return 4.0
-        case iPhone7_2:
+        case iPhone7_2, .iPhone8_1:
             return 4.7
-        case iPhone7_1:
+        case iPhone7_1, .iPhone8_2:
             return 5.5
         case iPad1_1, iPad2_1, iPad2_2, iPad2_3, iPad2_4, iPad3_1, iPad3_2, iPad3_3, iPad3_4, iPad3_5, iPad3_6, iPad4_1, iPad4_2, iPad4_3, iPad5_3, iPad5_4:
             return 9.7
         case iPad2_5, iPad2_6, iPad2_7, iPad4_4, iPad4_5, iPad4_6, iPad4_7, iPad4_8, iPad4_9:
             return 7.9
+        case .iPad6_8:
+            return 12.9
         }
     }
     
@@ -154,6 +164,10 @@ public enum DeviceType: String {
             return .iPhone6
         case iPhone7_1:
             return .iPhone6Plus
+        case iPhone8_1:
+            return .iPhone6Plus
+        case iPhone8_2:
+            return .iPhone6SPlus
         case iPad1_1, iPad2_1, iPad2_2, iPad2_3, iPad2_4, iPad3_1, iPad3_2, iPad3_3, iPad3_4, iPad3_5, iPad3_6, iPad4_1, iPad4_2, iPad4_3, iPad5_3, iPad5_4:
             return .iPad
         case iPad2_5, iPad2_6, iPad2_7, iPad4_4, iPad4_5, iPad4_6, iPad4_7, iPad4_8, iPad4_9:
@@ -162,6 +176,8 @@ public enum DeviceType: String {
             return .iPodTouch
         case iPod5_1:
             return .iPodTouchLarge
+        case iPad6_8:
+            return .iPadPro
         }
     }
 }
