@@ -1,4 +1,4 @@
-//
+    //
 //  RequestBase.swift
 //  TAKSwiftSupport
 //
@@ -24,16 +24,24 @@ public class RequestBase: NSObject {
     /// Rx
     public let requestDisposeBag = DisposeBag()
     
-    // Default time out
+    // Time out
     public static var timeoutIntervalForRequest = NSTimeInterval(15.0)
     public static var timeoutIntervalForResource = NSTimeInterval(20.0)
+    
+    // Cache Policy
+    public static var cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
     
     /// Alamofire object
     private static let manager: Manager = {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        // Time out
         configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
         configuration.timeoutIntervalForRequest = RequestBase.timeoutIntervalForRequest
         configuration.timeoutIntervalForResource = RequestBase.timeoutIntervalForResource
+        
+        // Cache policy
+        configuration.requestCachePolicy = RequestBase.cachePolicy
         
         return Manager(configuration: configuration)
     }()
@@ -161,6 +169,7 @@ public class RequestBase: NSObject {
     レスポンスをJsonマッピングする
     */
     private final func responseJson() -> Observable<String> {
+        
         let source: Observable<String> = Observable.create {
             [weak self] (observer: AnyObserver<String>) in
             
