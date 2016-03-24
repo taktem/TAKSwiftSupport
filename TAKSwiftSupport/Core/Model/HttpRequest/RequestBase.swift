@@ -25,26 +25,41 @@ public class RequestBase: NSObject {
     public let requestDisposeBag = DisposeBag()
     
     // Time out
-    public static var timeoutIntervalForRequest = NSTimeInterval(15.0)
-    public static var timeoutIntervalForResource = NSTimeInterval(20.0)
+    public static var timeoutIntervalForRequest = NSTimeInterval(15.0) {
+        didSet {
+            manager = RequestBase.updateManager()
+        }
+    }
+    public static var timeoutIntervalForResource = NSTimeInterval(20.0) {
+        didSet {
+            manager = RequestBase.updateManager()
+        }
+    }
     
     // Cache Policy
-    public static var cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
+    public static var cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy {
+        didSet {
+            manager = RequestBase.updateManager()
+        }
+    }
     
     /// Alamofire object
-    private static let manager: Manager = {
+    private static var manager: Manager = RequestBase.updateManager()
+    
+    private final class func updateManager() -> Manager {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         
-        // Time out
         configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
-        configuration.timeoutIntervalForRequest = RequestBase.timeoutIntervalForRequest
-        configuration.timeoutIntervalForResource = RequestBase.timeoutIntervalForResource
+        
+        // Time out
+        configuration.timeoutIntervalForRequest = 1000000
+        configuration.timeoutIntervalForResource = 1000000
         
         // Cache policy
         configuration.requestCachePolicy = RequestBase.cachePolicy
         
         return Manager(configuration: configuration)
-    }()
+    }
 
     // Requestオブジェクト
     private var request: Request?
@@ -67,7 +82,7 @@ public class RequestBase: NSObject {
         headers: [String: String]) -> Request? {
             
             guard let requestUrl = hostName.appending(pathComponent: path) else {
-                return request
+                return nil
             }
             
             request = RequestBase.manager.request(
@@ -128,8 +143,6 @@ public class RequestBase: NSObject {
             return source
     }
     
-    
-    
     /**
      レスポンス形式がルート配列のJsonの場合、Entityを指定してObjectMapperでマッピングまで行う
      
@@ -137,10 +150,9 @@ public class RequestBase: NSObject {
      */
     public final func requestJson<T: Responsible>(
         ) -> Observable<[T]> {
-            
             let source: Observable<[T]> = Observable.create {
                 [weak self] (observer: AnyObserver<[T]>) in
-                
+
                 let _ = self?.responseJson()
                     .subscribe(
                         onNext: { jsonString in
@@ -157,10 +169,10 @@ public class RequestBase: NSObject {
                             observer.onError(error)
                         }, onCompleted: { }, onDisposed: { }
                 )
-                
+
                 return AnonymousDisposable { }
             }
-            
+
             return source
     }
     
