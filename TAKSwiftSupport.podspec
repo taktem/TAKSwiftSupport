@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
-    ss.dependency 'Alamofire', '~> 3.1.5'
-    ss.dependency 'RxSwift', '~> 2.1.0'
-    ss.dependency 'RxCocoa', '~> 2.1.0'
-    ss.dependency 'RxBlocking', '~> 2.1.0'
-    ss.dependency 'ObjectMapper', '~> 1.1'
+    ss.dependency 'Alamofire', '= 3.2.1'
+    ss.dependency 'RxSwift', '= 2.3.0'
+    ss.dependency 'RxCocoa', '= 2.3.0'
+    ss.dependency 'RxBlocking', '= 2.3.0'
+    ss.dependency 'ObjectMapper', '= 1.1.5'
   end
 
   s.subspec 'CoreMotion' do |ss|
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
   s.subspec 'Realm' do |ss|
     ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
-    ss.dependency 'RealmSwift', '~> 0.97.0'
+    ss.dependency 'RealmSwift', '= 0.98.5'
   end
 
   s.subspec 'CoreLocation' do |ss|
