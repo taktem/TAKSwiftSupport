@@ -52,8 +52,8 @@ public class RequestBase: NSObject {
         configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
         
         // Time out
-        configuration.timeoutIntervalForRequest = 1000000
-        configuration.timeoutIntervalForResource = 1000000
+        configuration.timeoutIntervalForRequest = RequestBase.timeoutIntervalForRequest
+        configuration.timeoutIntervalForResource = RequestBase.timeoutIntervalForResource
         
         // Cache policy
         configuration.requestCachePolicy = RequestBase.cachePolicy

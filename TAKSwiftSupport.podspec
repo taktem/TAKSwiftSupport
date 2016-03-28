@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "TAKSwiftSupport"
-  s.version      = "0.6.22"
+  s.version      = "0.6.23"
   s.summary      = "Swift Support Project"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.homepage     = "https://github.com/taktem/TAKSwiftSupport"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'TAKSwiftSupport/Core/**/*.swift'
-    ss.dependency 'Alamofire', '= 3.2.1'
+    ss.dependency 'Alamofire', '= 3.1.5'
     ss.dependency 'RxSwift', '= 2.3.0'
     ss.dependency 'RxCocoa', '= 2.3.0'
     ss.dependency 'RxBlocking', '= 2.3.0'
