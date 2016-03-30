@@ -19,36 +19,34 @@ public enum EasingType: String {
 public class Easing: NSObject {
     public class func timeToEasingCarve(
         type type: EasingType,
-        var time: CGFloat,
-        startValue: CGFloat,
-        changeValue: CGFloat,
-        duration: CGFloat) -> CGFloat {
+             time: CGFloat,
+             startValue: CGFloat,
+             changeValue: CGFloat,
+             duration: CGFloat) -> CGFloat {
+        
+        let time = time < 0.0 ? time : 0.0
+        
+        switch type {
+        case .Unknown:
+            return startValue
             
-            if time < 0.0 {
-                time = 0.0
-            }
+        case .NoAnimation:
+            return changeValue
             
-            switch type {
-            case .Unknown:
-                return startValue
-                
-            case .NoAnimation:
-                return changeValue
-                
-            case .Linear:
-                return timeToEasingCarveLinear(
-                    time: time,
-                    startValue: startValue,
-                    changeValue: changeValue,
-                    duration: duration)
-                
-            case .EaseInOut:
-                return timeToEasingCarveEaseInOut(
-                    time: time,
-                    startValue: startValue,
-                    changeValue: changeValue,
-                    duration: duration)
-            }
+        case .Linear:
+            return timeToEasingCarveLinear(
+                time: time,
+                startValue: startValue,
+                changeValue: changeValue,
+                duration: duration)
+            
+        case .EaseInOut:
+            return timeToEasingCarveEaseInOut(
+                time: time,
+                startValue: startValue,
+                changeValue: changeValue,
+                duration: duration)
+        }
     }
     
     /**

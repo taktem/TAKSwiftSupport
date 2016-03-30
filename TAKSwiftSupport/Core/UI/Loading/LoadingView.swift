@@ -146,7 +146,7 @@ public final class LoadingView: UIView {
             delayTime = LoadingView.MIN_SHOW_LOADING_TIME - elaspedTime;
         }
         
-        loadingView.performSelector(Selector("closeAnimaton"), withObject: nil, afterDelay: delayTime)
+        loadingView.performSelector(#selector(LoadingView.closeAnimaton), withObject: nil, afterDelay: delayTime)
     }
     
     // MARK: Animation

@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.1'
+use_frameworks!
+
+pod 'Alamofire', '~> 3.3.0'
+pod 'RxSwift', '~> 2.3.1'
+pod 'RxCocoa', '~> 2.3.1'
+pod 'RxBlocking', '~> 2.3.1'
+pod 'ObjectMapper', '~> 1.2.0'
+pod 'RealmSwift', '~> 0.98.6'

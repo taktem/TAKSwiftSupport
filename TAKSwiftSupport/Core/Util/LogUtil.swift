@@ -14,18 +14,18 @@ import UIKit
  */
 
 public func DLog(message: AnyObject?,
-    function: String = __FUNCTION__,
-    line: Int = __LINE__,
-    file: String = __FILE__) {
+    function: String = #function,
+    line: Int = #line,
+    file: String = #file) {
         #if DEBUG
             print("[\(lastPass(fileName: file)):\(function) Line:\(line)] : \(message)" )
         #endif
 }
 
 public func DLog(message: AnyObject,
-    function: String = __FUNCTION__,
-    line: Int = __LINE__,
-    file: String = __FILE__) {
+    function: String = #function,
+    line: Int = #line,
+    file: String = #file) {
         #if DEBUG
             print("[\(lastPass(fileName: file)):\(function) Line:\(line)] : \(message)" )
         #endif
@@ -35,16 +35,16 @@ public func DLog(message: AnyObject,
  無条件で出力するログ
  */
 public func ALog(message: AnyObject?,
-    function: String = __FUNCTION__,
-    line: Int = __LINE__,
-    file: String = __FILE__) {
+    function: String = #function,
+    line: Int = #line,
+    file: String = #file) {
         print("[\(lastPass(fileName: file)):\(function) Line:\(line)] : \(message)" )
 }
 
 public func ALog(message: AnyObject,
-    function: String = __FUNCTION__,
-    line: Int = __LINE__,
-    file: String = __FILE__) {
+    function: String = #function,
+    line: Int = #line,
+    file: String = #file) {
         print("[\(lastPass(fileName: file)):\(function) Line:\(line)] : \(message)" )
 }
 

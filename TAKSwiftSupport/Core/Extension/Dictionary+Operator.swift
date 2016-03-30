@@ -14,9 +14,10 @@ public extension Dictionary {
         dictionary.forEach { self[$0] = $1 }
     }
     
-    func union(var dictionary: Dictionary) -> Dictionary {
-        dictionary.unionInPlace(self)
-        return dictionary
+    func union(dictionary: Dictionary) -> Dictionary {
+        var base = self
+        base.unionInPlace(dictionary)
+        return base
     }
 }
 
