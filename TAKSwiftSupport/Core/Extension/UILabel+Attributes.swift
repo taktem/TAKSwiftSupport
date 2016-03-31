@@ -63,7 +63,18 @@ public extension UILabel {
             NSFontAttributeName: font(name: fontName, size: size)
         ]
     }
-    
+	
+	/**
+	Font
+	
+	- parameter font: font
+	*/
+	final class func attributeWithFont(font font: UIFont) -> [String: AnyObject] {
+		return [
+			NSFontAttributeName: font
+		]
+	}
+	
     /**
      Line Height
      Text Alignment
@@ -72,7 +83,7 @@ public extension UILabel {
 	- parameter alignment: Text Alignment
 	*/
 	final class func attributeWithParagraphStyle(lineHeight lineHeight: Float? = nil, alignment alignment: NSTextAlignment? = nil) -> [String: AnyObject] {
-		
+	
 		let paragraphStyle = NSMutableParagraphStyle()
 		
         if let lineHeight = lineHeight {
@@ -101,7 +112,7 @@ public extension UILabel {
      
      - parameter em: Letter Spacing
      */
-    final class func attributeWithKerning(em: Float) -> [String: AnyObject] {
+    final class func attributeWithKerning(em em: Float) -> [String: AnyObject] {
         return [
             NSKernAttributeName: em
         ]
@@ -124,7 +135,13 @@ public extension UILabel {
         return attrText
     }
     
-    // Join AttributeString
+	/**
+	JoinAttributesStrings
+	
+	- parameter string:     String
+	
+	- returns: [NSAttributedString]
+	*/
     final func joinAttributesStrings(strings strings: [NSAttributedString]) {
         let attrStrings = NSMutableAttributedString()
         for string in strings {
@@ -133,4 +150,63 @@ public extension UILabel {
         
         self.attributedText = attrStrings
     }
+	
+	/**
+	OverRide Attributes Setting
+	
+	*/
+	final func overrideAttributes(
+		font font: UIFont? = nil,
+		color: UIColor? = nil,
+		borderColor: UIColor? = nil,
+		borderWidth: Int = 0,
+		kerning: Float? = nil,
+		lineHeight: Float? = nil,
+		alignment: NSTextAlignment? = nil
+		) {
+		
+		guard let text = text else {
+			return
+		}
+		
+		var attributes = [String: AnyObject]()
+		
+		// font
+		if let font = font {
+			attributes += UILabel.attributeWithFont(font: font)
+		}
+		
+		// color
+		if let color = color {
+			attributes += UILabel.attributeWithColor(color: color)
+		}
+		
+		// border 
+		if let borderColor = borderColor {
+			attributes += UILabel.attributeWithOutline(color: borderColor, width: borderWidth)
+		}
+		
+		// Kerning
+		if let kerning = kerning {
+			attributes += UILabel.attributeWithKerning(em: kerning)
+		}
+		
+		// ParagraphStyle
+		attributes += UILabel.attributeWithParagraphStyle(lineHeight: lineHeight, alignment: alignment)
+		
+		// set
+		joinAttributesStrings(
+			strings: [UILabel.attributedText(
+				string: text,
+				attributes: attributes)])
+	}
+	
+	/**
+	Update LabelText and return self
+	
+	*/
+	final func setText(text text: String) -> UILabel {
+		self.text = text
+		return self
+	}
 }
