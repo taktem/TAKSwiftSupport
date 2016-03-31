@@ -58,7 +58,7 @@ public extension UILabel {
      - parameter fontName: enum FontName
      - parameter size:     font size
      */
-    final class func attributeWithFont(fontName: FontName, size: Float) -> [String: AnyObject] {
+    final class func attributeWithFont(fontName fontName: FontName, size: Float) -> [String: AnyObject] {
         return [
             NSFontAttributeName: font(name: fontName, size: size)
         ]
@@ -69,12 +69,33 @@ public extension UILabel {
      
      - parameter lineHeight: Line Height
      */
-    final class func attributeWithLineHeight(lineHeight: Float) -> [String: AnyObject] {
+    final class func attributeWithLineHeight(lineHeight lineHeight: Float) -> [String: AnyObject] {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.minimumLineHeight = CGFloat(lineHeight);
         paragraphStyle.maximumLineHeight = CGFloat(lineHeight);
         
         return [NSParagraphStyleAttributeName: paragraphStyle]
+    }
+    
+    /**
+     Text Alignment
+     
+     - parameter alignment: Text Alignment
+     */
+    final class func attributeWithTextAlignment(alignment alignment: NSTextAlignment) -> [String: AnyObject] {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.Justified
+        
+        return [NSParagraphStyleAttributeName: paragraphStyle]
+    }
+    
+    /**
+     BaselineOffset
+     
+     - parameter baseLineOffset: BaselineOffset
+     */
+    final class func attributeWithBaselineOffset(baseLineOffset baseLineOffset: Float) -> [String: AnyObject] {
+        return [NSBaselineOffsetAttributeName: NSNumber(float: baseLineOffset)]
     }
     
     /**
