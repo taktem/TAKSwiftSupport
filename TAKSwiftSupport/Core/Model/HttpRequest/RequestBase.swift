@@ -198,12 +198,12 @@ public class RequestBase: NSObject {
             
             return AnonymousDisposable { }
         }
-        
+		
         return source
     }
     
     /**
-     レスポンスオブジェクトからJson文字列へマッピングする
+     JsonString from Response
      */
     private final func mappingJson(response response: Response<NSData, NSError>?) -> (jsonString: String?, error: NSError?) {
 
@@ -224,7 +224,7 @@ public class RequestBase: NSObject {
     }
     
     /**
-     NSDataをJson文字列化
+     NSData to Json
      */
     private final func jsonString(data: NSData) -> String? {
         var buffer = [UInt8](count:data.length, repeatedValue:0)

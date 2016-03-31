@@ -66,25 +66,23 @@ public extension UILabel {
     
     /**
      Line Height
-     
-     - parameter lineHeight: Line Height
-     */
-    final class func attributeWithLineHeight(lineHeight lineHeight: Float) -> [String: AnyObject] {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = CGFloat(lineHeight);
-        paragraphStyle.maximumLineHeight = CGFloat(lineHeight);
-        
-        return [NSParagraphStyleAttributeName: paragraphStyle]
-    }
-    
-    /**
      Text Alignment
      
-     - parameter alignment: Text Alignment
-     */
-    final class func attributeWithTextAlignment(alignment alignment: NSTextAlignment) -> [String: AnyObject] {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = alignment
+     - parameter lineHeight: Line Height
+	- parameter alignment: Text Alignment
+	*/
+	final class func attributeWithParagraphStyle(lineHeight lineHeight: Float? = nil, alignment alignment: NSTextAlignment? = nil) -> [String: AnyObject] {
+		
+		let paragraphStyle = NSMutableParagraphStyle()
+		
+        if let lineHeight = lineHeight {
+            paragraphStyle.minimumLineHeight = CGFloat(lineHeight);
+            paragraphStyle.maximumLineHeight = CGFloat(lineHeight);
+        }
+        
+        if let alignment = alignment {
+            paragraphStyle.alignment = alignment
+        }
         
         return [NSParagraphStyleAttributeName: paragraphStyle]
     }
