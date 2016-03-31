@@ -84,7 +84,7 @@ public extension UILabel {
      */
     final class func attributeWithTextAlignment(alignment alignment: NSTextAlignment) -> [String: AnyObject] {
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.Justified
+        paragraphStyle.alignment = alignment
         
         return [NSParagraphStyleAttributeName: paragraphStyle]
     }
