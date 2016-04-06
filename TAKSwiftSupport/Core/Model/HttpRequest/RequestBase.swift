@@ -181,7 +181,7 @@ public class RequestBase: NSObject {
     レスポンスをJsonマッピングする
     */
     private final func responseJson() -> Observable<String> {
-        
+		
         let source: Observable<String> = Observable.create {
             [weak self] (observer: AnyObserver<String>) in
             

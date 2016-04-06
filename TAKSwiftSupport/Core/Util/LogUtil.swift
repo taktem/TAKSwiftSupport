@@ -58,3 +58,33 @@ private func lastPass(fileName fileName: String) -> String {
     
     return lastPath
 }
+
+public class Benchmark {
+	/// Identifier & StartDate
+	private static var stockIdentifier = [String: NSDate]()
+	
+	/**
+	Start
+	
+	- parameter identifier: Process Idenitifier
+	*/
+	public final class func startProcess(identifier: String) {
+		Benchmark.stockIdentifier[identifier] = NSDate()
+	}
+	
+	/**
+	Finish
+	
+	- parameter identifier: Process Identifier
+	*/
+	public final class func finishProcess(identifier: String) {
+		guard let startTime = Benchmark.stockIdentifier[identifier] else {
+			return
+		}
+		Benchmark.stockIdentifier.removeValueForKey(identifier)
+		
+		let elapsed = NSDate().timeIntervalSinceDate(startTime)
+		let formatedElapsed = String(format: "%.3f", elapsed)
+		DLog("Benchmark: \(identifier), Elasped time: \(formatedElapsed)(s)")
+	}
+}

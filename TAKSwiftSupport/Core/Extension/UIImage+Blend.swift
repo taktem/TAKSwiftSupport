@@ -15,7 +15,7 @@ public extension UIImage {
      - parameter color:     塗りつぶし色
      - parameter blendMode: ブレンドモード
      */
-    final func fillImage(color:UIColor, blendMode:CGBlendMode) -> UIImage {
+    final func fillImage(color:UIColor, blendMode:CGBlendMode = .DestinationIn) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         color.setFill()
         
