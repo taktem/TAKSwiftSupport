@@ -17,8 +17,6 @@ public enum DeviceMonitorType {
     case iPhone5
     case iPhone6
     case iPhone6Plus
-    case iPhone6S
-    case iPhone6SPlus
 	case iPhoneSE
     case iPad
     case iPadMini
@@ -163,14 +161,10 @@ public enum DeviceType: String {
             return .iPhone4
         case iPhone5_1, iPhone5_2, iPhone5_3, iPhone5_4, iPhone6_1, .iPhone6_2:
             return .iPhone5
-        case iPhone7_2:
+        case iPhone7_2, iPhone8_1:
             return .iPhone6
-        case iPhone7_1:
+        case iPhone7_1, iPhone8_2:
             return .iPhone6Plus
-        case iPhone8_1:
-            return .iPhone6Plus
-        case iPhone8_2:
-            return .iPhone6SPlus
 		case .iPhone8_4:
 			return .iPhoneSE
         case iPad1_1, iPad2_1, iPad2_2, iPad2_3, iPad2_4, iPad3_1, iPad3_2, iPad3_3, iPad3_4, iPad3_5, iPad3_6, iPad4_1, iPad4_2, iPad4_3, iPad5_3, iPad5_4:

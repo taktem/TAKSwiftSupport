@@ -9,26 +9,6 @@
 import UIKit
 
 public extension UILabel {
-    // http://iosfonts.com
-    enum FontName: String {
-        case AvenirLight = "Avenir-Light"
-        case AvenirMedium = "Avenir-Medium"
-        case Copperplate = "Copperplate"
-        case CopperplateBold = "Copperplate-Bold"
-        case CopperplateLight  = "Copperplate-Light"
-        case HelveticaNeue = "HelveticaNeue"
-        case HelveticaNeueBold = "HelveticaNeue-Bold"
-        case HelveticaNeueCondensedBlack = "HelveticaNeue-CondensedBlack"
-        case HiraKakuProW3 = "HiraKakuProN-W3"
-        case HiraKakuProW6 = "HiraKakuProN-W6"
-        case HiraMinProW3 = "HiraMinProN-W3"
-        case HiraMinProW6 = "HiraMinProN-W6"
-        case OptimaRegular = "Optima-Regular"
-    }
-    
-    final class func font(name fontName: FontName, size: Float) -> UIFont {
-        return UIFont(name: fontName.rawValue, size: CGFloat(size))!
-    }
     
     /**
      Fill Color
@@ -58,9 +38,9 @@ public extension UILabel {
      - parameter fontName: enum FontName
      - parameter size:     font size
      */
-    final class func attributeWithFont(fontName fontName: FontName, size: Float) -> [String: AnyObject] {
+    final class func attributeWithFont(fontName fontName: UIFont.FontName, size: Float) -> [String: AnyObject] {
         return [
-            NSFontAttributeName: font(name: fontName, size: size)
+            NSFontAttributeName: UIFont(name: fontName, size: size)
         ]
     }
 	
@@ -181,7 +161,7 @@ public extension UILabel {
 			attributes += UILabel.attributeWithColor(color: color)
 		}
 		
-		// border 
+		// border
 		if let borderColor = borderColor {
 			attributes += UILabel.attributeWithOutline(color: borderColor, width: borderWidth)
 		}
