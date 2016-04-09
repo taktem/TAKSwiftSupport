@@ -13,6 +13,7 @@ public extension UIFont {
 	enum FontName: String {
 		case AvenirLight = "Avenir-Light"
 		case AvenirMedium = "Avenir-Medium"
+		case AvenirHeavy = "Avenir-Heavy"
 		case Copperplate = "Copperplate"
 		case CopperplateBold = "Copperplate-Bold"
 		case CopperplateLight  = "Copperplate-Light"
@@ -27,7 +28,7 @@ public extension UIFont {
 	}
 	
 	// Create font with name (Fource unwrap, becouse select name from avalable list)
-	public convenience init(name fontName: FontName, size: Float) {
-		self.init(name: fontName.rawValue, size: CGFloat(size))!
+	public convenience init(name fontName: FontName, size: CGFloat) {
+		self.init(name: fontName.rawValue, size: size)!
 	}
 }

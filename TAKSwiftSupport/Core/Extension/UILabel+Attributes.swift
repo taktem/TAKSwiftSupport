@@ -38,7 +38,7 @@ public extension UILabel {
      - parameter fontName: enum FontName
      - parameter size:     font size
      */
-    final class func attributeWithFont(fontName fontName: UIFont.FontName, size: Float) -> [String: AnyObject] {
+    final class func attributeWithFont(fontName fontName: UIFont.FontName, size: CGFloat) -> [String: AnyObject] {
         return [
             NSFontAttributeName: UIFont(name: fontName, size: size)
         ]
