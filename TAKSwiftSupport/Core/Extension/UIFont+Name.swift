@@ -25,6 +25,9 @@ public extension UIFont {
 		case HiraMinProW3 = "HiraMinProN-W3"
 		case HiraMinProW6 = "HiraMinProN-W6"
 		case OptimaRegular = "Optima-Regular"
+		case OptimaItalic = "Optima-Italic"
+		case OptimaBold = "Optima-Bold"
+		case OptimaBoldItalic = "Optima-BoldItalic"
 	}
 	
 	// Create font with name (Fource unwrap, becouse select name from avalable list)
