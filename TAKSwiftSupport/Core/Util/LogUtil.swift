@@ -73,18 +73,39 @@ public class Benchmark {
 	}
 	
 	/**
+	Pin
+	
+	- parameter identifier: Process Identifier
+	- parameter comment:	Log comment
+	*/
+	public final class func pinProcess(identifier identifier: String, comment: String? = nil) {
+		log(identifier: identifier, comment: comment)
+	}
+	
+	/**
 	Finish
 	
 	- parameter identifier: Process Identifier
+	- parameter comment:	Log comment
 	*/
-	public final class func finishProcess(identifier: String) {
+	public final class func finishProcess(identifier identifier: String, comment: String? = nil) {
+		log(identifier: identifier, comment: comment)
+		Benchmark.stockIdentifier.removeValueForKey(identifier)
+	}
+	
+	private final class func log(identifier identifier: String, comment: String? = nil) {
 		guard let startTime = Benchmark.stockIdentifier[identifier] else {
 			return
 		}
-		Benchmark.stockIdentifier.removeValueForKey(identifier)
 		
 		let elapsed = NSDate().timeIntervalSinceDate(startTime)
 		let formatedElapsed = String(format: "%.3f", elapsed)
-		DLog("Benchmark: \(identifier), Elasped time: \(formatedElapsed)(s)")
+		
+		var log = "Benchmark: \(identifier), Elasped time: \(formatedElapsed)(s)"
+		
+		if let comment = comment {
+			log += comment
+		}
+		DLog(log)
 	}
 }
