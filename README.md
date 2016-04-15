@@ -6,7 +6,7 @@ Swift用汎用クラス集
 ##Installation with CocoaPods
 
 ###Requirements
-requires iOS 8 & xCode7.2
+requires iOS 8 & Xcode7.2
 
 ###Podfile
 ```ruby
