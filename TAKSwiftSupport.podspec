@@ -38,12 +38,6 @@ Pod::Spec.new do |s|
     ss.dependency 'TAKSwiftSupport/Core'
   end
 
-  s.subspec 'Realm' do |ss|
-    ss.source_files = 'TAKSwiftSupport/Realm/**/*.swift'
-    ss.dependency 'TAKSwiftSupport/Core'
-    ss.dependency 'RealmSwift', '= 0.98.5'
-  end
-
   s.subspec 'CoreLocation' do |ss|
     ss.source_files = 'TAKSwiftSupport/CoreLocation/**/*.swift'
     ss.dependency 'TAKSwiftSupport/Core'
