@@ -6,11 +6,11 @@ Swift用汎用クラス集
 ##Installation with CocoaPods
 
 ###Requirements
-requires iOS 8 & xCode7.2
+requires iOS 8 & Xcode7.3
 
 ###Podfile
 ```ruby
-pod 'TAKSwiftSupport/Core', '~> 0.3'
+pod 'TAKSwiftSupport/Core'
 ```
 
 #####If use DebugLog
